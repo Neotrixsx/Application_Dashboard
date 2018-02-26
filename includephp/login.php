@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $error = "Your Login Name or Password is invalid";
         echo '<script type="text/javascript">',
-        'toastr.info("Are you the 6 fingered man?")',
+        '$.toast("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, consequuntur doloremque eveniet eius eaque dicta repudiandae illo ullam. Minima itaque sint magnam dolorum asperiores repudiandae dignissimos expedita, voluptatum vitae velit.")',
             '</script>';
     }
 }
