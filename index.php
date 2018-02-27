@@ -33,10 +33,7 @@
 </head>
 
 <body>
-<?php
-include "include/config.php";
-include "includephp/login.php";
-?>
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -74,7 +71,24 @@ include "includephp/login.php";
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
-
+    <!-- toast message  -->
+    <link href="dist/toast/jquery.toast.min.css" rel="stylesheet">
+    <script src="dist/toast/jquery.toast.min.js"></script>
+    <script>
+    testtoast = function(){
+        $.toast({
+            heading: 'Information',
+            text: 'Your Login Name or Password is invalid',
+            icon: 'info',
+            loader: true,        // Change it to false to disable loader
+            loaderBg: '#9EC600'  // To change the background
+        });
+    }
+    </script>
 </body>
 
 </html>
+<?php
+include "include/config.php";
+include "includephp/login.php";
+?>

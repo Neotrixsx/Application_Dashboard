@@ -13,4 +13,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php?/$1 [L]
 
 #ErrorDocument 404 http://www.domain.com/404page.html
-ErrorDocument 404 404.php
+ErrorDocument 404 /error_pages/404page.html

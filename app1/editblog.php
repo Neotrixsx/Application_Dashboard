@@ -55,21 +55,24 @@ include '../session.php';
             </ul>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
+                <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="../launch"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="userinfo"><i class="fa fa-list-alt  fa-fw"></i> Users</a>
+                            <a href="../app1"><i class="fa fa-home fa-fw"></i> App Home</a>
                         </li>
                         <li>
-                            <a href="blog"><i class="fa fa-list-alt  fa-fw"></i> Blog</a>
+                            <a href="usersinfo"><i class="fa fa-users  fa-fw"></i> Users</a>
                         </li>
                         <li>
-                            <a href="newblog"><i class="fa fa-list-alt  fa-fw"></i> New Blog</a>
+                            <a href="blog"><i class="fa fa-wordpress  fa-fw"></i> Blog</a>
                         </li>
                         <li>
-                            <a href="editblog"><i class="fa fa-list-alt  fa-fw"></i> Edit Blog</a>
+                            <a href="newblog"><i class="fa fa-book  fa-fw"></i> New Blog</a>
+                        </li>
+                        <li>
+                            <a href="editblog"><i class="fa fa-edit  fa-fw"></i> Edit Blog</a>
                         </li>
                     </ul>
                 </div>
