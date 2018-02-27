@@ -18,7 +18,7 @@ include '../session.php';
     <link href="../js/toast/jquery.toast.min.css" rel="stylesheet">
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../css/style.css" rel="stylesheet" type="text/css">
-    
+
     <!-- DataTables CSS -->
     <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
@@ -48,7 +48,7 @@ include '../session.php';
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="../includephp/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="../includephp/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -57,19 +57,22 @@ include '../session.php';
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="../launch"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="userinfo"><i class="fa fa-list-alt  fa-fw"></i> Users</a>
+                            <a href="../app1"><i class="fa fa-home fa-fw"></i> App Home</a>
                         </li>
                         <li>
-                            <a href="blog"><i class="fa fa-list-alt  fa-fw"></i> Blog</a>
+                            <a href="usersinfo"><i class="fa fa-users  fa-fw"></i> Users</a>
                         </li>
                         <li>
-                            <a href="newblog"><i class="fa fa-list-alt  fa-fw"></i> New Blog</a>
+                            <a href="blog"><i class="fa fa-wordpress  fa-fw"></i> Blog</a>
                         </li>
                         <li>
-                            <a href="editblog"><i class="fa fa-list-alt  fa-fw"></i> Edit Blog</a>
+                            <a href="newblog"><i class="fa fa-book  fa-fw"></i> New Blog</a>
+                        </li>
+                        <li>
+                            <a href="editblog"><i class="fa fa-edit  fa-fw"></i> Edit Blog</a>
                         </li>
                     </ul>
                 </div>
@@ -514,7 +517,7 @@ include '../session.php';
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
- 
+
                 </div>
                 <div>
             </div>
