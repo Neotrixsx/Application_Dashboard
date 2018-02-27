@@ -33,10 +33,7 @@
 </head>
 
 <body>
-<?php
-include "include/config.php";
-// include "includephp/login.php";
-?>
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -74,31 +71,24 @@ include "include/config.php";
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
-
+    <!-- toast message  -->
+    <link href="dist/toast/jquery.toast.min.css" rel="stylesheet">
+    <script src="dist/toast/jquery.toast.min.js"></script>
+    <script>
+    testtoast = function(){
+        $.toast({
+            heading: 'Information',
+            text: 'Your Login Name or Password is invalid',
+            icon: 'info',
+            loader: true,        // Change it to false to disable loader
+            loaderBg: '#9EC600'  // To change the background
+        });
+    }
+    </script>
 </body>
 
 </html>
 <?php
-session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // username and password sent from form
-    $myusername = mysqli_real_escape_string($db, $_POST['username']);
-    $mypassword = mysqli_real_escape_string($db, $_POST['password']);
-
-    $sql = "SELECT `userid` FROM `userinfo` WHERE `username`= '$myusername' and `password`= '$mypassword'";
-    $result = mysqli_query($db, $sql);
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $count = mysqli_num_rows($result);
-    // If result matched $myusername and $mypassword, table row must be 1 row
-    if ($count == 1) {
-        $_SESSION['login_user'] = $myusername;
-        header("location: launch.php");
-    } else {
-        $error = "Your Login Name or Password is invalid";
-        echo '<script type="text/javascript">',
-        '$.toast("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, consequuntur doloremque eveniet eius eaque dicta repudiandae illo ullam. Minima itaque sint magnam dolorum asperiores repudiandae dignissimos expedita, voluptatum vitae velit.")',
-            '</script>';
-    }
-}
-
+include "include/config.php";
+include "includephp/login.php";
+?>

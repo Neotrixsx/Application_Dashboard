@@ -1,5 +1,5 @@
 <?php
-include 'session.php';
+    include 'session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,10 +15,9 @@ include 'session.php';
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="js/toast/jquery.toast.min.css" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-
-
 </head>
 <body>
     <div id="wrapper">
@@ -88,11 +87,7 @@ include 'session.php';
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-                        <a href="app1/launch.php">
-=======
                         <a href="app1/">
->>>>>>> c256cc06e7526a95a8ab2cacfd5ac1fdbaad8cb7
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -114,9 +109,9 @@ include 'session.php';
                                 </div>
                             </div>
                         </div>
-                        <a href="#" onclick="testtoast()" >
+                        <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">test toast View Details</span>
+                                <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -178,19 +173,6 @@ include 'session.php';
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendor/metisMenu/metisMenu.min.js"></script>
     <script src="dist/js/sb-admin-2.js"></script>
-    <!-- toast message  -->
-    <link href="dist/toast/jquery.toast.min.css" rel="stylesheet">
-    <script src="dist/toast/jquery.toast.min.js"></script>
-    <script>
-    function testtoast(){
-        $.toast({
-            heading: 'Information',
-            text: 'Loaders are enabled by default. Use `loader`, `loaderBg` to change the default behavior',
-            icon: 'info',
-            loader: true,        // Change it to false to disable loader
-            loaderBg: '#9EC600'  // To change the background
-        })
-    }
-    </script>
+    <script src="js/toast/jquery.toast.min.js"></script>
 </body>
 </html>
