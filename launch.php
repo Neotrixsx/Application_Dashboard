@@ -88,11 +88,8 @@ include 'session.php';
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-                        <a href="app1/launch.php">
-=======
                         <a href="app1/">
->>>>>>> c256cc06e7526a95a8ab2cacfd5ac1fdbaad8cb7
+
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
