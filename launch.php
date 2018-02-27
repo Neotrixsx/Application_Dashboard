@@ -42,7 +42,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="includephp/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="includephp/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -51,10 +51,13 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="profile.php"><i class="fa fa-dashboard fa-fw"></i> Profile</a>
+                            <a href="profile"><i class="fa fa-dashboard fa-fw"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="profile.php"><i class="fa fa-list-alt  fa-fw"></i> Add Application</a>
+                            <a href="profile"><i class="fa fa-list-alt  fa-fw"></i> Add Application</a>
+                        </li>
+                        <li>
+                            <a href="profile"><i class="fa fa-list-alt  fa-fw"></i>Test Notification</a>
                         </li>
                     </ul>
                 </div>
@@ -84,7 +87,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="app1/">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
