@@ -77,11 +77,16 @@
     <script>
     testtoast = function(){
         $.toast({
-            heading: 'Information',
+            // heading: 'Information',
+            // text: 'Your Login Name or Password is invalid',
+            // icon: 'info',
+            // loader: true,        // Change it to false to disable loader
+            // loaderBg: '#9EC600'  // To change the background
+            heading: 'Error',
             text: 'Your Login Name or Password is invalid',
-            icon: 'info',
-            loader: true,        // Change it to false to disable loader
-            loaderBg: '#9EC600'  // To change the background
+            position: 'top-right',
+            showHideTransition: 'fade',
+            icon: 'error'
         });
     }
     </script>
