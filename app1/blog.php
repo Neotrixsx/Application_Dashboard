@@ -1,6 +1,6 @@
 <?php
-    include '../session.php';
-    include "includephp/fetchblog.php";
+include '../session.php';
+include "includephp/fetchblog.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,19 +107,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php  
-                                while ( $row = mysqli_fetch_array($bloginfo, MYSQLI_ASSOC)){
-                                ?>
+                                <?php
+                                    while ($row = mysqli_fetch_array($bloginfo, MYSQLI_ASSOC)) {
+                                    ?>
                                     <tr class="gradeX">
                                         <td class="center"><?php echo $row['postid']; ?></td>
-                                        <td class="center"><?php echo $row['title']; ?> ?></td>
+                                        <td class="center"><?php echo $row['title']; ?></td>
                                         <td class="center"><?php echo $row['time']; ?></td>
                                         <td class="center"><?php echo $row['pubname']; ?></td>
-                                        <td class="center"><?php echo $row['link']; ?></td>
+                                        <td class="center"><a  target="_blank" href="<?php echo $row['link']; ?>"> <?php echo $row['link']; ?></a></td>
                                     </tr>
-                                    <?php  
-                               }
-                                ?>
+                                    <?php
+}
+?>
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
@@ -140,7 +140,7 @@
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
     <script src="../dist/js/sb-admin-2.js"></script>
-   
+
     <!-- DataTables JavaScript -->
     <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
