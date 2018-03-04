@@ -61,7 +61,7 @@ include '../session.php';
                 </div>
                 <div class="row">
                 <div class="col-lg-12">
-                <form role="form" action="not_test.php" method="post">
+                <form role="form" action="not_test" method="post">
                     <div class="form-group">
                         <input type="text" name="title" id="title" class="form-control input-lg" placeholder="Title" tabindex="3">
                     </div>
@@ -101,7 +101,7 @@ include '../session.php';
                     </div>
                     <hr class="colorgraph">
                     <div class="row">
-                        <div class="col-xs-12 "><input type="submit" class="btn btn-success btn-block btn-lg" value="Send Notification"></input>
+                        <div class="col-xs-12 "><input type="submit" class="btn btn-success btn-block btn-lg" value="Send Notification"></input><br>
                     </div>
                 </form>
                 </div>

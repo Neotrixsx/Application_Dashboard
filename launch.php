@@ -1,11 +1,9 @@
 <?php
-include 'session.php';
+    include 'session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +15,6 @@ include 'session.php';
     <link href="dist/css/sb-admin-2.css" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-
-
 </head>
 <body>
     <div id="wrapper">
@@ -73,7 +69,6 @@ include 'session.php';
                 </div>
                 <div class="row">
                 <div class="col-lg-12">
-                    <!-- // Data page -->
                     <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
@@ -89,7 +84,6 @@ include 'session.php';
                             </div>
                         </div>
                         <a href="app1/">
-
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
