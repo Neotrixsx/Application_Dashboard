@@ -13,4 +13,12 @@
    if(!isset($_SESSION['login_user'])){
       header("location:../");
    }
+
+//    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+//     // request 30 minates ago
+//     session_destroy();
+//     session_unset();
+// }
+// $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time
+
 ?>
