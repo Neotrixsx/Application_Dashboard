@@ -88,6 +88,6 @@ $json_encode = json_encode($myresponse);
 // print_r("$json_encode");
 $_SESSION['notinfo'] = $json_encode; 
 // header('Location: checkIfExsists.php');
-header('Location: index');
+header('Location: ../notification/');
 ob_end_flush();
 ?>

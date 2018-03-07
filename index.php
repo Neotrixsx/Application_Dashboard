@@ -17,11 +17,11 @@
     <!-- MetisMenu CSS -->
     <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
+     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom CSS -->
+  <link href="dist/common/sb-admin-2.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,7 +70,7 @@
     <script src="vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="dist/js/sb-admin-2.js"></script>
+    <script src="dist/common/sb-admin-2.js"></script>
     <!-- toast message  -->
     <link href="dist/toast/jquery.toast.min.css" rel="stylesheet">
     <script src="dist/toast/jquery.toast.min.js"></script>
@@ -104,6 +104,6 @@
 
 </html>
 <?php
-include "include/config.php";
-include "includephp/login.php";
+include "pages/include/config.php";
+include "pages/includephp/login.php";
 ?>

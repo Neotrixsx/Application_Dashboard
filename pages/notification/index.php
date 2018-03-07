@@ -1,6 +1,5 @@
 <?php
-include '../session.php';
-
+    include '../session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +12,11 @@ include '../session.php';
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Dashboard</title>
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dist/common/sb-admin-2.css" rel="stylesheet">
+    <link href="../../dist/common/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="wrapper">
@@ -61,7 +60,7 @@ include '../session.php';
                 </div>
                 <div class="row">
                 <div class="col-lg-12">
-                <form role="form" action="not_test" method="post">
+                <form role="form" action="../includephp/notification" method="post">
                     <div class="form-group">
                         <input type="text" name="title" id="title" class="form-control input-lg" placeholder="Title" tabindex="3">
                     </div>
@@ -135,14 +134,15 @@ include '../session.php';
             <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-    <script src="../dist/js/sb-admin-2.js"></script>
-    <script src="js/js.js"></script>
-     <!-- toast message  -->
-     <link href="../dist/toast/jquery.toast.min.css" rel="stylesheet">
-    <script src="../dist/toast/jquery.toast.min.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="../../dist/common/sb-admin-2.js"></script>
+
+    <!-- toast message  -->
+    <link href="../../dist/toast/jquery.toast.min.css" rel="stylesheet">
+    <script src="../../dist/toast/jquery.toast.min.js"></script>
+
     <script>
      testtoast = function(message){
         $.toast({
