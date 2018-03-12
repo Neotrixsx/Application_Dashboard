@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("location: pages/launch");
     } else if ($count == 0) {
         $error = "Your Login Name or Password is invalid";
-        echo "<script type='text/javascript'> testtoast(); </script>";
+        echo "<script type='text/javascript'> loginerrortoast(); </script>";
     }
 }
 ?>

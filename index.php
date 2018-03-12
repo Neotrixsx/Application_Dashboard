@@ -74,32 +74,8 @@
     <!-- toast message  -->
     <link href="dist/toast/jquery.toast.min.css" rel="stylesheet">
     <script src="dist/toast/jquery.toast.min.js"></script>
-    <script>
-    testtoast = function(){
-        $.toast({
-            // heading: 'Information',
-            // text: 'Your Login Name or Password is invalid',
-            // icon: 'info',
-            // loader: true,        // Change it to false to disable loader
-            // loaderBg: '#9EC600'  // To change the background
-            heading: 'Error',
-            text: 'Your Login Name or Password is invalid',
-            position: 'top-right',
-            showHideTransition: 'fade',
-            icon: 'error'
-        });
-    }
-//----- How-do-I-block-inspect-element-on-my-website link: http://qr.ae/TU8zRm
-//    $(document).bind("contextmenu",function(e) {
-//         e.preventDefault();
-//     });
-
-//     $(document).keydown(function(e){
-//         if(e.which === 123){
-//         return false;
-//         }
-//     });
-    </script>
+    <script src="dist/toast/jquery.toast.messages.js"></script>
+    <script src="dist/common/js.js"></script>
 </body>
 
 </html>
