@@ -124,8 +124,8 @@
                     <p> $summeryText = "Venha provar os nossos Gins";</p>
                     <p> $image = "http://gintonico.com/content/uploads/2015/03/fontenova.jpg";</p>
                     <p> $picture = "http://media5.letsbonus.com/products/285000/285006/14014409744462-0-1700x690.jpg";</p>
-                    <p> $key[] = 'dc_9YO1hRTo:APA91bEQV51ckIhndP7GJ29mwlRSuuLPgJ_5aRNVNnX9USGhraf4kaOwdi1etH0kWY_nTI6E_Ckj0yN';</p>
-                    <p> $apiKey = "AIzaSyD1Zmb5nJqDhcWeQ6ZhlHpGguRz0Z0a222";    // Replace with real server API key from Google APIs</p>
+                    <p> $key[] = 'dc_9YO1hRTo:APA91bEQV51ckIhndP7GJ29mwlRSuuLPgJ_5aRNVNnX9USGhraf4kaOwighBnBifmuEtdkvKJSX2YqMGg2QXOCpN0JOA8VmM3xd</i1etH0kWY_nTI6E_Ckj0yNFxtsNDZWRb6eWtUIy4S ';
+                    <p> $apiKey = "AIzaSyD1Zmb5nJqDhcWeQ6ZhlHpGguRz0Z0a222";    // Replace with real server API key from Google APIs</i1etH0kWY_nTI6E_Ckj0yNFxtsNDZWRb6eWtUIy4S';>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -142,11 +142,24 @@
     <!-- toast message  -->
     <link href="../../dist/toast/jquery.toast.min.css" rel="stylesheet">
     <script src="../../dist/toast/jquery.toast.min.js"></script>
-    <script src="../../dist/toast/jquery.toast.messages.js"></script>
 
+    <script>
+     testtoast = function(message){
+        $.toast({
+            heading: 'Information',
+            text: message,
+            icon: 'info',
+            loader: true,        // Change it to false to disable loader
+            loaderBg: '#9EC600'  // To change the background
+        })
+    }
+    </script>
 </body>
 </html>
 
 <?php
-include '../includephp/notification.php';
+$notinfo = $_SESSION['notinfo'];
+echo '<script type="text/javascript">',
+'testtoast(' . $notinfo . ');',
+    '</script>';
 ?>

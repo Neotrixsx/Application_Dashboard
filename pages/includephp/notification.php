@@ -1,10 +1,8 @@
+
 <?php
-header('Content-type: application/json');
-header("Access-Control-Allow-Origin: *");
-header('Access-Control-Allow-Methods: REQUEST, GET, POST');
-// $test_data=$_POST['test_data'];
-// echo $test_data;
-// echo '<pre>';print_r($_POST);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  
 $title = $_POST['title'];
 $notID = $_POST['notid'];
 $message1 = $_POST['message'];
@@ -13,18 +11,9 @@ $summeryText = $_POST['summeryText'];
 $image = $_POST['image'];
 $picture = $_POST['picture'];
 $key = explode(',',$_POST['nottification_key']); 
-$apiKeydata = $_POST['apiKey']; // Replace with real server API key from Google APIs
+$apiKeydata = $_POST['apiKey']; 
+// Replace with real server API key from Google AP)
 
-//  echo $title;
-//  echo $notID;
-//  echo $message1;
-//  echo $style;
-//  echo $summeryText;
-//  echo $image;
-//  echo $picture;
-//  echo $apiKeydata;
-//  echo '<pre>';print_r($key);
-// print_r($key); // exit();
 
 foreach($key as $keyVal) {
     $apiKey = $apiKeydata;
@@ -55,7 +44,6 @@ foreach($key as $keyVal) {
         ) ,
     );
 
-    // echo '<pre>'; print_r($fields); exit; --- Testing
     $headers = array(
         'Authorization: key=' . $apiKey,
         'Content-Type: application/json'
@@ -69,7 +57,7 @@ foreach($key as $keyVal) {
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
 
@@ -79,15 +67,22 @@ foreach($key as $keyVal) {
 
     // Close connection
     curl_close($ch);
-    // print $ch;
 }
 
-// print_r($result);
-$myresponse[0] = "success";
-$json_encode = json_encode($myresponse);
+$json_encode = json_encode($result);
 // print_r("$json_encode");
 $_SESSION['notinfo'] = $json_encode; 
-// header('Location: checkIfExsists.php');
-header('Location: ../notification/');
+
+
+
+
+// $inserresult = mysqli_query($db, $insertsql);
+// if($inserresult){         
+//     echo "<script type='text/javascript'> successtoast(); </script>";
+// } else{
+//     echo "<script type='text/javascript'> warningtoast(); </script>";
+// }
+
 ob_end_flush();
+}
 ?>
