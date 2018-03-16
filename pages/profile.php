@@ -1,5 +1,6 @@
 <?php
     include 'session.php';
+    include 'includephp/fetchadmin.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,100 +71,24 @@
                     </div>
                 </div>
                 <div class="row">
-                <div class="col-lg-12">
-                    <!-- // Data page -->
-                    <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
-                                    <div>New Comments!</div>
-                                </div>
+                    <div class="col-lg-12">                    
+                        <form role="form" method="post">
+                            <div class="form-group">
+                                <label>User ID</label>
+                                <input class="form-control" value="<?php echo $id; ?>" disabled>
                             </div>
-                        </div>
-                        <a href="app1/">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
+                            <div class="form-group">
+                                <label>User Name(email)</label>
+                                <input type="email" name="uname" value="<?php echo $name; ?>" class="form-control" placeholder="Enter username">
                             </div>
-                        </a>
+                            <div class="form-group">
+                                <label>Text Input with Placeholder</label>
+                                <input text="text" name="upass" value="<?php echo $pass; ?>" class="form-control" placeholder="Enter password">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit </button>
+                            <button type="reset" class="btn btn-default">Reset </button>
+                        </form>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
-                                    <div>New Tasks!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
-                                    <div>New Orders!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
-                </div>
                 <div>
             </div>
         </div>
@@ -173,8 +98,12 @@
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
     <script src="../dist/common/sb-admin-2.js"></script>
 
-    <!-- toast message  -->
-    <link href="../dist/toast/jquery.toast.min.css" rel="stylesheet">
-    <script src="../dist/toast/jquery.toast.min.js"></script>
+    <!-- toast message  --> 
+    <link href="dist/toast/jquery.toast.min.css" rel="stylesheet">
+    <script src="dist/toast/jquery.toast.min.js"></script>
+    <script src="dist/toast/jquery.toast.messages.js"></script>
 </body>
 </html>
+<?php
+include "includephp/updateadmin.php";
+?>

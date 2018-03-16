@@ -35,7 +35,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../launch">Brand Name</a>
+                <a class="navbar-brand" href="../">Brand Name</a>
             </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown fr">
@@ -57,7 +57,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="../launch"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
+                            <a href="../"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="../application_1"><i class="fa fa-home fa-fw"></i> App Home</a>

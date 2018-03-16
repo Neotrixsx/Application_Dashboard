@@ -10,6 +10,16 @@ successtoast = function () {
     });
 }
 
+successupdatetoast = function () {
+    $.toast({
+        heading: 'Success',
+        text: 'Record inserted successfully !!',
+        position: 'top-right',
+        showHideTransition: 'fade',
+        icon: 'success'
+    });
+}
+
 errortoast = function () {
     $.toast({
         heading: 'Error',

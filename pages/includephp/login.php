@@ -10,7 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $count = mysqli_num_rows($result);
     if ($count == 1) {
         $_SESSION['login_user'] = $myusername;
-        header("location: pages/launch");
+        $_SESSION['login_id'] = $row['userid'];
+        header("location: pages/");
     } else if ($count == 0) {
         $error = "Your Login Name or Password is invalid";
         echo "<script type='text/javascript'> loginerrortoast(); </script>";

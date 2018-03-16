@@ -45,7 +45,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="../launch"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
+                            <a href="../"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
                         </li>
                     </ul>
                 </div>

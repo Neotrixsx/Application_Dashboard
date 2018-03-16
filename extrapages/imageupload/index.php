@@ -23,7 +23,7 @@
 				$.ajax({
 					url: "upload",
 					type: "POST",
-					data:  new FormData(this),
+					data:  new FormData(this),{test:'tesst'},
 					contentType: false,
 					cache: false,
 					processData:false,

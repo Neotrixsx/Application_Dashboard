@@ -92,76 +92,6 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
-                                    <div>New Tasks!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" onclick="testtoast()" >
-                            <div class="panel-footer">
-                                <span class="pull-left">test toast View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
-                                    <div>New Orders!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
-                </div>
-                <div>
             </div>
         </div>
     </div>
@@ -169,21 +99,5 @@
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
     <script src="../dist/common/sb-admin-2.js"></script>
-
-    <!-- toast message  -->
-    <link href="../dist/toast/jquery.toast.min.css" rel="stylesheet">
-    <script src="../dist/toast/jquery.toast.min.js"></script>
-
-    <script>
-    function testtoast(){
-        $.toast({
-            heading: 'Information',
-            text: 'Loaders are enabled by default. Use `loader`, `loaderBg` to change the default behavior',
-            icon: 'info',
-            loader: true,        // Change it to false to disable loader
-            loaderBg: '#9EC600'  // To change the background
-        })
-    }
-    </script>
 </body>
 </html>

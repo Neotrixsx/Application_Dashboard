@@ -30,6 +30,8 @@ if (is_array($_FILES)) {
 					if (is_uploaded_file($_FILES['userImage']['tmp_name'])) {
 						$sourcePath = $file_tmp;
 						$targetPath = "images/" . $file_name;
+
+						// $targetPath = "../../dXBsb2Fk/" . $file_name;
 						if (move_uploaded_file($sourcePath, $targetPath)) {
                          ?>
                         <img class="image-preview" src="<?php echo $targetPath; ?>" class="upload-preview" />
