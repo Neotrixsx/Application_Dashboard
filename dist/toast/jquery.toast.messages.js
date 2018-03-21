@@ -59,3 +59,40 @@ loginerrortoast = function () {
     });
 }
 
+duplicatetoast = function () {
+    $.toast({
+        heading: 'Error',
+        text: 'Duplicate data found, Please try again...',
+        position: 'top-right',
+        showHideTransition: 'fade',
+        icon: 'error'
+    });
+}
+addnewapperrortoast = function () {
+    $.toast({
+        heading: 'Error',
+        text: 'Some error occur. Please contact admin!!!',
+        position: 'top-right',
+        showHideTransition: 'fade',
+        icon: 'error'
+    });
+}
+addnewapptableerrortoast = function () {
+    $.toast({
+        heading: 'Error',
+        text: 'Some error occur. Please contact admin!!!',
+        position: 'top-right',
+        showHideTransition: 'fade',
+        icon: 'error'
+    });
+}
+
+addnewappsuccesstoast = function () {
+    $.toast({
+        heading: 'Success',
+        text: 'New application cerated and inserted data successfully !!',
+        position: 'top-right',
+        showHideTransition: 'fade',
+        icon: 'success'
+    });
+}

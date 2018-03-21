@@ -1,5 +1,7 @@
 <?php
     include 'session.php';
+    include 'includephp/fetchapptype.php';
+    include 'includephp/fetchappcat.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,12 +38,8 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="includephp/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li>
+                            <a href="includephp/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -50,122 +48,93 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="profile"><i class="fa fa-dashboard fa-fw"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="profile"><i class="fa fa-list-alt  fa-fw"></i> Add Application</a>
-                        </li>
-                        <li>
-                            <a href="notification/"><i class="fa fa-list-alt  fa-fw"></i>Test Notification</a>
+                            <a href="../pages"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Applications</h1>
-                    </div>
-                </div>
-                <div class="row">
+            <div class="row">
                 <div class="col-lg-12">
-                    <!-- // Data page -->
-                    <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
-                                    <div>New Comments!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="app1/">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
+                    <h1 class="page-header">Add Application </h1>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
-                                    <div>New Tasks!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
-                                    <div>New Orders!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Basic Application information
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form role="form" method="post">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input class="form-control"  type="text" id="appname" name="appname" placeholder="Enter Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID</label>
+                                            <input id="appid" name="appid" class="form-control"  type="text" readonly  >
+                                            <p class="help-block">Application ID based on above name</p>
+                                            <p class="help-block">Note: Non-editable and not able to change in future.</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Application Type</label>
+                                            <select class="form-control" name="apptype" >
+                                            <?php  
+                                                while ( $row = mysqli_fetch_array($apptype, MYSQLI_ASSOC)){
+                                                ?>
+                                                 <option id="<?php echo $row['application_type_name']; ?>"><?php echo $row['application_type_name']; ?></option>
+                                                <?php  
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Application Category</label>
+                                            <select class="form-control" name="appcat" >
+                                            <?php  
+                                                while ( $row = mysqli_fetch_array($appcat, MYSQLI_ASSOC)){
+                                                ?>
+                                                 <option id="<?php echo $row['category_name']; ?>"><?php echo $row['category_name']; ?></option>
+                                                <?php  
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea name="appdes" class="form-control" placeholder="Enter Description"  rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Website</label>
+                                            <input class="form-control"  type="url" id="appweb" name="appweb" placeholder="Enter URL">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email(Support)</label>
+                                            <input class="form-control"  type="email" id="appemail" name="appemail" placeholder="Enter Email">
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                        <button type="reset" class="btn btn-default">Reset Button</button>
+                                    </form>
+                                </div>
+                                
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
                 </div>
-                <div>
+                <!-- /.col-lg-12 -->
             </div>
+            <!-- /.row -->
         </div>
     </div>
     <script src="../vendor/jquery/jquery.min.js"></script>
@@ -173,8 +142,24 @@
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
     <script src="../dist/common/sb-admin-2.js"></script>
 
-    <!-- toast message  -->
+    <!-- toast message  --> 
     <link href="../dist/toast/jquery.toast.min.css" rel="stylesheet">
     <script src="../dist/toast/jquery.toast.min.js"></script>
+    <script src="../dist/toast/jquery.toast.messages.js"></script>
+    <script>
+       $(function(){
+            $("#appname").keyup(function(e){
+                $("#appid").val($("#appname").val().substring(0, 4).toLowerCase().replace(/ /g, '')); //+"_"
+                //get value from #appname
+                //split string in 4 character(maximum)
+                //convert string in lowercase
+                //replace space from string
+                //add "_" postfix in string
+            });
+        });
+       </script>
 </body>
 </html>
+<?php
+    include "includephp/addapp.php";
+?>

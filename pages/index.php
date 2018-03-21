@@ -1,5 +1,5 @@
 <?php
-    include 'session.php';
+include 'session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,9 +34,7 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="profile"><i class="fa fa-user fa-fw"></i>Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="includephp/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -48,13 +46,13 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="add_app"><i class="fa fa-dashboard fa-fw"></i> Profile</a>
+                            <a href="profile"><i class="fa fa-user fa-fw"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="profile"><i class="fa fa-list-alt  fa-fw"></i> Add Application</a>
+                            <a href="add_app"><i class="fa fa-plus fa-fw"></i> Add Application</a>
                         </li>
                         <li>
-                            <a href="notification/"><i class="fa fa-list-alt  fa-fw"></i>Test Notification</a>
+                            <a href="notification/"><i class="fa fa-rss-square fa-fw"></i>Push Notification</a>
                         </li>
                     </ul>
                 </div>

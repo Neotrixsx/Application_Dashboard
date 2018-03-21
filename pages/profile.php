@@ -2,6 +2,7 @@
     include 'session.php';
     include 'includephp/fetchadmin.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,13 +52,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="profile"><i class="fa fa-dashboard fa-fw"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="profile"><i class="fa fa-list-alt  fa-fw"></i> Add Application</a>
-                        </li>
-                        <li>
-                            <a href="notification/"><i class="fa fa-list-alt  fa-fw"></i>Test Notification</a>
+                            <a href="../pages"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
                         </li>
                     </ul>
                 </div>
@@ -72,7 +67,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">                    
-                        <form role="form" method="post">
+                        <form role="form" method="post" >
                             <div class="form-group">
                                 <label>User ID</label>
                                 <input class="form-control" value="<?php echo $id; ?>" disabled>
@@ -99,9 +94,9 @@
     <script src="../dist/common/sb-admin-2.js"></script>
 
     <!-- toast message  --> 
-    <link href="dist/toast/jquery.toast.min.css" rel="stylesheet">
-    <script src="dist/toast/jquery.toast.min.js"></script>
-    <script src="dist/toast/jquery.toast.messages.js"></script>
+    <link href="../dist/toast/jquery.toast.min.css" rel="stylesheet">
+    <script src="../dist/toast/jquery.toast.min.js"></script>
+    <script src="../dist/toast/jquery.toast.messages.js"></script>
 </body>
 </html>
 <?php
