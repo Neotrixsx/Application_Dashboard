@@ -1,9 +1,8 @@
 <?php
-    include '../session.php';
+include '../session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -64,7 +63,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Push Notification (Android only)</h1>
+                        <h1 class="page-header">Push Notification (Android and iOS vai Firebase)</h1>
                     </div>
                 </div>
                 <div class="row">
@@ -123,18 +122,18 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" id="myModalLabel">How to use</h4>
+                    <h4 class="modal-title" id="myModalLabel">How to use(Example)</h4>
                 </div>
                 <div class="modal-body">
-                    <p> $title = "FinalPush Application";</p>
-                    <p> $notID = 3;</p>
-                    <p> $message1 = "Hi I am Developer. I am just testing Push Notification for FinalPush"; // push notification msg</p>
-                    <p> $style = "picture"; //picture/inbox</p>
-                    <p> $summeryText = "Venha provar os nossos Gins";</p>
-                    <p> $image = "http://gintonico.com/content/uploads/2015/03/fontenova.jpg";</p>
-                    <p> $picture = "http://media5.letsbonus.com/products/285000/285006/14014409744462-0-1700x690.jpg";</p>
-                    <p> $key[] = 'dc_9YO1hRTo:APA91bEQV51ckIhndP7GJ29mwlRSuuLPgJ_5aRNVNnX9USGhraf4kaOwdi1etH0kWY_nTI6E_Ckj0yN';</p>
-                    <p> $apiKey = "AIzaSyD1Zmb5nJqDhcWeQ6ZhlHpGguRz0Z0a222";    // Replace with real server API key from Google APIs</p>
+                    <p> <strong>Title           </strong>= "FinalPush Application";</p>
+                    <p> <strong>Notification-ID </strong>= 3;</p>
+                    <p> <strong>Message1        </strong>= "Hi I am Developer. I am just testing Push Notification for FinalPush"; // push notification msg</p>
+                    <p> <strong>Style           </strong>= "picture"; //picture/inbox</p>
+                    <p> <strong>SummeryText     </strong>= "Venha provar os nossos Gins";</p>
+                    <p> <strong>Image           </strong>= "http://gintonico.com/content/uploads/2015/03/fontenova.jpg";</p>
+                    <p> <strong>Picture         </strong>= "http://media5.letsbonus.com/products/285000/285006/14014409744462-0-1700x690.jpg";</p>
+                    <p> <strong>Key[](Device ID)</strong> = 'dc_9YO1hRTo:APA91bEQV51ckIhndP7GJ29mwlRSuuLPgJ_5aRNVNnX9USGhraf4kaOwdi1etH0kWY_nTI6E_Ckj0yN';</p>
+                    <p> <strong>ApiKey          </strong>= "AIzaSyD1Zmb5nJqDhcWeQ6ZhlHpGguRz0Z0a222";    // Replace with real server API key from Google APIs</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

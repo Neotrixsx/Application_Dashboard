@@ -1,10 +1,10 @@
-function delinfo(paraminfo,dataname){
-    if (confirm("Want to delete "+ dataname +" details ?")) {
+function delinfo(paraminfo, dataname) {
+    if (confirm("Want to delete " + dataname + " details ?")) {
         window.location = "?param=" + paraminfo;
-    } 
+    }
 }
 
-function reloadpage(){
+function reloadpage() {
     window.location.reload();
 }
 
@@ -19,3 +19,9 @@ function reloadpage(){
 //         return false;
 //         }
 //     });
+
+
+   function jumppage(appid) {
+        localStorage['app_id'] = appid;
+        window.location.href = 'applications/'; 
+    }

@@ -2,6 +2,7 @@
     include 'session.php';
     include 'includephp/fetchadmin.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,13 +52,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="profile"><i class="fa fa-user fa-fw"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="add_app"><i class="fa  fa-plus   fa-fw"></i> Add Application</a>
-                        </li>
-                        <li>
-                            <a href="notification/"><i class="fa fa-stack-exchange fa-fw"></i>Test Notification</a>
+                            <a href="../pages"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
                         </li>
                     </ul>
                 </div>
@@ -72,7 +67,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">                    
-                        <form role="form" method="post">
+                        <form role="form" method="post" >
                             <div class="form-group">
                                 <label>User ID</label>
                                 <input class="form-control" value="<?php echo $id; ?>" disabled>

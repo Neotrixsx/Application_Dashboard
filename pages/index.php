@@ -1,5 +1,6 @@
 <?php
-    include 'session.php';
+include 'session.php';
+include 'includephp/fetchappslist.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,9 +35,7 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="profile"><i class="fa fa-user fa-fw"></i>Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="includephp/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -51,25 +50,29 @@
                             <a href="profile"><i class="fa fa-user fa-fw"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="add_app"><i class="fa  fa-plus   fa-fw"></i> Add Application</a>
+                            <a href="add_app"><i class="fa fa-plus fa-fw"></i> Add Application</a>
                         </li>
                         <li>
-                            <a href="notification/"><i class="fa fa-stack-exchange fa-fw"></i>Test Notification</a>
+                            <a href="notification/"><i class="fa fa-rss-square fa-fw"></i>Push Notification</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+       
         <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Applications</h1>
-                    </div>
-                </div>
-                <div class="row">
+            <div class="row">
                 <div class="col-lg-12">
-                    <div class="row">
+                    <h1 class="page-header">Applications</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <!-- /.Application Card -->
+                <?php  
+                    while ( $row = mysqli_fetch_array($appslist, MYSQLI_ASSOC)){
+                ?>
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -79,12 +82,12 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div><?php echo $row['app_name']; ?></div>
                                 </div>
                             </div>
                         </div>
-                        <a href="application_1/">
-                            <div class="panel-footer">
+                        <a>
+                            <div class="panel-footer" onclick="jumppage('<?php echo $row['app_id']; ?>')" >
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
@@ -92,12 +95,18 @@
                         </a>
                     </div>
                 </div>
+                <?php  
+                    }
+                ?>
+                <!-- /.Application Card -->
             </div>
+            <!-- /.row -->
         </div>
     </div>
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
     <script src="../dist/common/sb-admin-2.js"></script>
+    <script src="../dist/common/js.js"></script>
 </body>
 </html>
