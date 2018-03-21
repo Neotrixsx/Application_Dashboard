@@ -1,5 +1,6 @@
 <?php
 include 'session.php';
+include 'includephp/fetchappslist.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,16 +59,20 @@ include 'session.php';
                 </div>
             </div>
         </nav>
+       
         <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Applications</h1>
-                    </div>
-                </div>
-                <div class="row">
+            <div class="row">
                 <div class="col-lg-12">
-                    <div class="row">
+                    <h1 class="page-header">Applications</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <!-- /.Application Card -->
+                <?php  
+                    while ( $row = mysqli_fetch_array($appslist, MYSQLI_ASSOC)){
+                ?>
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -77,12 +82,12 @@ include 'session.php';
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div><?php echo $row['app_name']; ?></div>
                                 </div>
                             </div>
                         </div>
-                        <a href="application_1/">
-                            <div class="panel-footer">
+                        <a>
+                            <div class="panel-footer" onclick="jumppage('<?php echo $row['app_id']; ?>')" >
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
@@ -90,12 +95,18 @@ include 'session.php';
                         </a>
                     </div>
                 </div>
+                <?php  
+                    }
+                ?>
+                <!-- /.Application Card -->
             </div>
+            <!-- /.row -->
         </div>
     </div>
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
     <script src="../dist/common/sb-admin-2.js"></script>
+    <script src="../dist/common/js.js"></script>
 </body>
 </html>
