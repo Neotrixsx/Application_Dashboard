@@ -48,13 +48,13 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="add_app"><i class="fa fa-dashboard fa-fw"></i> Profile</a>
+                            <a href="profile"><i class="fa fa-user fa-fw"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="profile"><i class="fa fa-list-alt  fa-fw"></i> Add Application</a>
+                            <a href="add_app"><i class="fa  fa-plus   fa-fw"></i> Add Application</a>
                         </li>
                         <li>
-                            <a href="notification/"><i class="fa fa-list-alt  fa-fw"></i>Test Notification</a>
+                            <a href="notification/"><i class="fa fa-stack-exchange fa-fw"></i>Test Notification</a>
                         </li>
                     </ul>
                 </div>
