@@ -1,163 +1,319 @@
 <?php
-    include '../session.php';
-    include "includephp/fetchusers.php";
+include '../includex/session.php';
+// include '../includex/phpmessages.php';
+include "includephp/fetchappinfo.php";
 ?>
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Dashboard</title>
-    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../../dist/common/sb-admin-2.css" rel="stylesheet">
-    <link href="../../dist/common/style.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Dashboard</title>
+        <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+        <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../../dist/common/sb-admin-2.css" rel="stylesheet">
+        <link href="../../dist/common/style.css" rel="stylesheet" type="text/css">
 
-    <!-- DataTables CSS -->
-    <link href="../../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+        <!-- DataTables CSS -->
+        <link href="../../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
-    <!-- DataTables Responsive CSS -->
-    <link href="../../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-</head>
-<body>
-    <div id="wrapper">
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="../">Brand Name</a>
-            </div>
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown fr">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="../includephp/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="../"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="../application_1"><i class="fa fa-home fa-fw"></i> App Home</a>
-                        </li>
-                        <li>
-                            <a href="usersinfo"><i class="fa fa-users  fa-fw"></i> Users</a>
-                        </li>
-                        <li>
-                            <a href="blog"><i class="fa fa-wordpress  fa-fw"></i> Blog</a>
-                        </li>
-                        <li>
-                            <a href="newblog"><i class="fa fa-book  fa-fw"></i> New Blog</a>
-                        </li>
-                        <li>
-                            <a href="editblog"><i class="fa fa-edit  fa-fw"></i> Edit Blog</a>
-                        </li>
-                    </ul>
+        <!-- DataTables Responsive CSS -->
+        <link href="../../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../">Brand Name</a>
                 </div>
-            </div>
-        </nav>
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Applications 1</h1>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown fr">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i>
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="../includephp/logout">
+                                    <i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li>
+                                <a href="../">
+                                    <i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="user_list">
+                                    <i class="fa fa-arrow-left fa-fw"></i> User lists</a>
+                            </li>
+                            <li>
+                                <a href="blog_list">
+                                    <i class="fa fa-wordpress  fa-fw"></i> Blog lists</a>
+                            </li>
+                            <li>
+                                <a href="blog_new">
+                                    <i class="fa fa-book  fa-fw"></i> New Blog</a>
+                            </li>
+
+                        </ul>
                     </div>
                 </div>
-                <div class="row">
-                <div class="col-lg-12">
-                    <!-- // Data page -->
+            </nav>
+            <div id="page-wrapper">
+                <div class="container-fluid">
                     <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                <?php echo $appname ?>
+                            </h1>
                         </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Gender</th>
-                                        <th>Email</th>
-                                        <th>Address</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php  
-                                // while ($row = mysql_fetch_assoc($userinfo)){
-                                while ( $row = mysqli_fetch_array($userinfo, MYSQLI_ASSOC)){
-                                ?>
-                                    <tr class="gradeX">
-                                        <td class="center"><?php echo $row['userid']; ?></td>
-                                        <td class="center"><?php echo $row['fname']; ?> <?php echo $row['lname']; ?></td>
-                                        <td class="center"><?php echo $row['gender']; ?></td>
-                                        <td class="center"><?php echo $row['email']; ?></td>
-                                        <td class="center"><?php echo $row['address']; ?></td>
-                                    </tr>
-                                    <?php  
-                               }
-                                ?>
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
+                    <!-- block -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- // Data page -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <?php echo $appname ?> basic information:-
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <!-- data grid -->
+                                        <div class="panel-body row data-row-pad">
+                                            <div class="col-lg-6">
+                                                <strong>Name: </strong>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <?php echo $name ?>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body row data-row-pad">
+                                            <div class="col-lg-6">
+                                                <strong>Short Description: </strong>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <?php echo $shortdes ?>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body row data-row-pad">
+                                            <div class="col-lg-6">
+                                                <strong>Full Description: </strong>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <?php echo $fulldes ?>
+                                            </div>
+                                        </div>
+                                        <!-- data grid  end-->
+                                        <!-- /.panel-body -->
+                                    </div>
+                                    <!-- /.panel -->
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end block -->
+                    <!-- block -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- // Data page -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <?php echo $appname ?> Phone ScreenShots:-
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+
+                                            <!-- /.table-responsive -->
+                                        </div>
+                                        <!-- /.panel-body -->
+                                    </div>
+                                    <!-- /.panel -->
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end block -->
+                    <!-- block -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- // Data page -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <?php echo $appname ?> Tab ScreenShots:-
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+
+                                            <!-- /.table-responsive -->
+                                        </div>
+                                        <!-- /.panel-body -->
+                                    </div>
+                                    <!-- /.panel -->
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end block -->
+                    <!-- block -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- // Data page -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <?php echo $appname ?> basic images:-
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+
+                                            <!-- /.table-responsive -->
+                                        </div>
+                                        <!-- /.panel-body -->
+                                    </div>
+                                    <!-- /.panel -->
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end block -->
+                    <!-- block -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- // Data page -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <?php echo $appname ?> basic type and Category:-
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body row data-row-pad">
+                                            <div class="col-lg-6">
+                                                <strong>Application Type: </strong>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <?php echo $apptype ?>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body row data-row-pad">
+                                            <div class="col-lg-6">
+                                                <strong>Application Category: </strong>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <?php echo $category ?>
+                                            </div>
+                                        </div>
+                                        <!-- /.panel-body -->
+                                    </div>
+                                    <!-- /.panel -->
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end block -->
+                    <!-- block -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- // Data page -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <?php echo $appname ?> support and privacy:-
+                                        </div>
+                                                                                   <!-- data grid -->
+                                            <div class="panel-body row data-row-pad">
+                                                <div class="col-lg-6">
+                                                    <strong>Website: </strong>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <?php echo $website ?>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body row data-row-pad">
+                                                <div class="col-lg-6">
+                                                    <strong>Support Email: </strong>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <?php echo $supportemail ?>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body row data-row-pad">
+                                                <div class="col-lg-6">
+                                                    <strong>Support Phone: </strong>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <?php echo $supportphone ?>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body row data-row-pad">
+                                                <div class="col-lg-6">
+                                                    <strong>Privacy Policy: </strong>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <?php echo $privacypolicy ?>
+                                                </div>
+                                            </div>
+                                            <!-- /.table-responsive -->
+                                        </div>
+                                                                   <!-- /.panel -->
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end block -->
 
                 </div>
-                <div>
-            </div>
-        </div>
-    </div>
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
-    <script src="../../dist/common/sb-admin-2.js"></script>
+                <script src="../../vendor/jquery/jquery.min.js"></script>
+                <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+                <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
+                <script src="../../dist/common/sb-admin-2.js"></script>
 
-    <!-- toast message  -->
-    <link href="../../dist/toast/jquery.toast.min.css" rel="stylesheet">
-    <script src="../../dist/toast/jquery.toast.min.js"></script>
+                <!-- toast message  -->
+                <link href="../../dist/toast/jquery.toast.min.css" rel="stylesheet">
+                <script src="../../dist/toast/jquery.toast.min.js"></script>
+                <script src="../../dist/toast/jquery.toast.messages.js"></script>
 
-    <!-- DataTables JavaScript -->
-    <script src="../../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../../vendor/datatables-responsive/dataTables.responsive.js"></script>
-     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-     <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-    </script>
+                <!-- DataTables JavaScript -->
+                <script src="../../vendor/datatables/js/jquery.dataTables.min.js"></script>
+                <script src="../../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+                <script src="../../vendor/datatables-responsive/dataTables.responsive.js"></script>
+                <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 
-</body>
-</html>
+                <!-- Custome js -->
+                <script src="../../dist/common/script.js"></script>
+                <script src="../../dist/common/datatable.js"></script>
+
+    </body>
+
+    </html>

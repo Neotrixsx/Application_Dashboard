@@ -21,7 +21,21 @@ function reloadpage() {
 //     });
 
 
-   function jumppage(appid) {
-        localStorage['app_id'] = appid;
-        window.location.href = 'applications/'; 
-    }
+function jumppage(appid, appname) {
+    //ajax call 
+    $.ajax({
+        type: 'GET',
+        url: "../pages/includex/sess",
+        data: {
+            app_id: appid,
+            app_name: appname
+        },
+        success: function (data) {
+            alert(data);
+            window.location.href = 'applications/';
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("Error Occured on create settion");
+        }
+    });
+}

@@ -1,5 +1,5 @@
 <?php
-    include 'session.php';
+    include 'includex/session.php';
     include 'includephp/fetchapptype.php';
     include 'includephp/fetchappcat.php';
 ?>

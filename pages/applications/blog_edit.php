@@ -1,5 +1,5 @@
 <?php
-include '../session.php';
+include '../includex/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -213,7 +213,6 @@ include '../session.php';
             </div>
             <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
     </div>
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>

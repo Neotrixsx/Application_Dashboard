@@ -1,6 +1,7 @@
 <?php
-    include '../session.php';
-    include "includephp/fetchusers.php";
+include '../includex/session.php';
+include '../includex/phpmessages.php';
+include "includephp/fetchusers.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Brand Name</a>
+                <a class="navbar-brand" href="../">Brand Name</a>
             </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown fr">
@@ -43,12 +44,8 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="../includephp/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li>
+                            <a href="../includephp/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -59,21 +56,17 @@
                         <li>
                             <a href="../"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
-                            <a href="../application_1"><i class="fa fa-home fa-fw"></i> App Home</a>
-                        </li>
-                        <li>
-                            <a href="usersinfo"><i class="fa fa-users  fa-fw"></i> Users</a>
-                        </li>
+                        <!-- <li>
+                            <a href="../application"><i class="fa fa-arrow-left fa-fw"></i> App Home</a>
+                        </li> -->
+                        
                         <li>
                             <a href="blog"><i class="fa fa-wordpress  fa-fw"></i> Blog</a>
                         </li>
                         <li>
                             <a href="newblog"><i class="fa fa-book  fa-fw"></i> New Blog</a>
                         </li>
-                        <li>
-                            <a href="editblog"><i class="fa fa-edit  fa-fw"></i> Edit Blog</a>
-                        </li>
+                      
                     </ul>
                 </div>
             </div>
@@ -82,7 +75,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Applications 1</h1>
+                        <h1 class="page-header"><?php echo $appname ?></h1>
                     </div>
                 </div>
                 <div class="row">
@@ -92,7 +85,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                        <?php echo $appname ?> users list:-
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -107,10 +100,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php  
-                                // while ($row = mysql_fetch_assoc($userinfo)){
-                                while ( $row = mysqli_fetch_array($userinfo, MYSQLI_ASSOC)){
-                                ?>
+                                <?php
+                                     while ($row = mysqli_fetch_array($userinfo, MYSQLI_ASSOC)) {
+                                    ?>
                                     <tr class="gradeX">
                                         <td class="center"><?php echo $row['userid']; ?></td>
                                         <td class="center"><?php echo $row['fname']; ?> <?php echo $row['lname']; ?></td>
@@ -118,9 +110,9 @@
                                         <td class="center"><?php echo $row['email']; ?></td>
                                         <td class="center"><?php echo $row['address']; ?></td>
                                     </tr>
-                                    <?php  
-                               }
-                                ?>
+                                    <?php
+                                     }
+                                    ?>                                
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
@@ -145,19 +137,17 @@
     <!-- toast message  -->
     <link href="../../dist/toast/jquery.toast.min.css" rel="stylesheet">
     <script src="../../dist/toast/jquery.toast.min.js"></script>
-
+    <script src="../../dist/toast/jquery.toast.messages.js"></script>
+    
     <!-- DataTables JavaScript -->
     <script src="../../vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="../../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="../../vendor/datatables-responsive/dataTables.responsive.js"></script>
      <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-     <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-    </script>
+     
+     <!-- Custome js -->
+     <script src="../../dist/common/script.js"></script>
+     <script src="../../dist/common/datatable.js"></script>
 
 </body>
 </html>

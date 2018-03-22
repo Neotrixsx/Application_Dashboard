@@ -1,5 +1,6 @@
 <?php
-include 'session.php';
+include 'includex/session.php';
+include 'includex/phpmessages.php';
 include 'includephp/fetchappslist.php';
 ?>
 <!DOCTYPE html>
@@ -63,7 +64,11 @@ include 'includephp/fetchappslist.php';
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Applications</h1>
+                    <h1 class="page-header">Applications
+                        <span class="fr">
+                            <a href="add_app" type="button" class="btn btn-outline btn-success">  <i class="fa fa-plus fa-fw"></i> Add Application</a>
+                        </span>
+                    </h1>                    
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -71,6 +76,7 @@ include 'includephp/fetchappslist.php';
             <div class="row">
                 <!-- /.Application Card -->
                 <?php  
+                if($appslist!==""){
                     while ( $row = mysqli_fetch_array($appslist, MYSQLI_ASSOC)){
                 ?>
                 <div class="col-lg-3 col-md-6">
@@ -78,16 +84,16 @@ include 'includephp/fetchappslist.php';
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
+                                    <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
+                                    <div class="huge">1</div>
                                     <div><?php echo $row['app_name']; ?></div>
                                 </div>
                             </div>
                         </div>
                         <a>
-                            <div class="panel-footer" onclick="jumppage('<?php echo $row['app_id']; ?>')" >
+                            <div class="panel-footer" onclick="jumppage('<?php echo $row['app_id']; ?>','<?php echo $row['app_name']; ?>')" >
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
@@ -96,6 +102,19 @@ include 'includephp/fetchappslist.php';
                     </div>
                 </div>
                 <?php  
+                    }}else{
+                        ?> 
+                         <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                               <p class="nodata">No Application found</p>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                         <?php  
                     }
                 ?>
                 <!-- /.Application Card -->
@@ -107,6 +126,6 @@ include 'includephp/fetchappslist.php';
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
     <script src="../dist/common/sb-admin-2.js"></script>
-    <script src="../dist/common/js.js"></script>
+    <script src="../dist/common/script.js"></script>
 </body>
 </html>

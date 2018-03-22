@@ -75,11 +75,11 @@
     <link href="dist/toast/jquery.toast.min.css" rel="stylesheet">
     <script src="dist/toast/jquery.toast.min.js"></script>
     <script src="dist/toast/jquery.toast.messages.js"></script>
-    <script src="dist/common/js.js"></script>
+    <script src="dist/common/script.js"></script>
 </body>
 
 </html>
 <?php
-include "pages/include/config.php";
+include "pages/includex/config.php";
 include "pages/includephp/login.php";
 ?>
