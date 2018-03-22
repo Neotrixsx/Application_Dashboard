@@ -46,15 +46,6 @@ include '../session.php';
                         <li>
                             <a href="../"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
-                            <a href="profile"><i class="fa fa-user fa-fw"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="add_app"><i class="fa  fa-plus   fa-fw"></i> Add Application</a>
-                        </li>
-                        <li>
-                            <a href="notification/"><i class="fa fa-stack-exchange fa-fw"></i>Test Notification</a>
-                        </li>
                     </ul>
                 </div>
             </div>
