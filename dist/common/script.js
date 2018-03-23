@@ -31,7 +31,6 @@ function jumppage(appid, appname) {
             app_name: appname
         },
         success: function (data) {
-            alert(data);
             window.location.href = 'applications/';
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {

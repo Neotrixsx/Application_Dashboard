@@ -2,6 +2,7 @@
 include '../includex/session.php';
 include '../includex/phpmessages.php';
 include "includephp/fetchusers.php";
+include "includephp/appinfo.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,19 +54,22 @@ include "includephp/fetchusers.php";
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="../"><i class="fa fa-arrow-left  fa-fw"></i> Dashboard</a>
-                        </li>
-                        <!-- <li>
-                            <a href="../application"><i class="fa fa-arrow-left fa-fw"></i> App Home</a>
-                        </li> -->
-                        
-                        <li>
-                            <a href="blog"><i class="fa fa-wordpress  fa-fw"></i> Blog</a>
-                        </li>
-                        <li>
-                            <a href="newblog"><i class="fa fa-book  fa-fw"></i> New Blog</a>
-                        </li>
+                            <li>
+                                <a href="../applications/">
+                                    <i class="fa  fa-home  fa-fw"></i> Home</a>
+                            </li>
+                            <!-- <li>
+                                <a href="user_list">
+                                    <i class="fa fa-users fa-fw"></i> User lists</a>
+                            </li> -->
+                            <li>
+                                <a href="blog_list">
+                                    <i class="fa fa-wordpress  fa-fw"></i> Blog lists</a>
+                            </li>
+                            <li>
+                                <a href="blog_new">
+                                    <i class="fa fa-th-list  fa-fw"></i> New Blog</a>
+                            </li>
                       
                     </ul>
                 </div>
@@ -75,7 +79,7 @@ include "includephp/fetchusers.php";
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header"><?php echo $appname ?></h1>
+                        <h1 class="page-header">  <?php echo $app_name ?> Application users</h1>
                     </div>
                 </div>
                 <div class="row">
