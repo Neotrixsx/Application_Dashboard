@@ -54,23 +54,22 @@ include "includephp/appinfo.php";
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                            <li>
-                                <a href="../applications/">
-                                    <i class="fa  fa-home  fa-fw"></i> Home</a>
-                            </li>
-                            <!-- <li>
-                                <a href="user_list">
-                                    <i class="fa fa-users fa-fw"></i> User lists</a>
-                            </li> -->
-                            <li>
-                                <a href="blog_list">
-                                    <i class="fa fa-wordpress  fa-fw"></i> Blog lists</a>
-                            </li>
-                            <li>
-                                <a href="blog_new">
-                                    <i class="fa fa-th-list  fa-fw"></i> New Blog</a>
-                            </li>
-                      
+                        <li>
+                            <a href="../applications/">
+                                <i class="fa  fa-home  fa-fw"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="user_list">
+                                <i class="fa fa-users fa-fw"></i> User lists</a>
+                        </li>
+                        <li>
+                            <a href="blog_list">
+                                <i class="fa fa-wordpress  fa-fw"></i> Blog lists</a>
+                        </li>
+                        <li>
+                            <a href="blog_new">
+                                <i class="fa fa-th-list  fa-fw"></i> New Blog</a>
+                        </li>                      
                     </ul>
                 </div>
             </div>

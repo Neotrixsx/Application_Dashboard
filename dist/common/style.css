@@ -1,4 +1,4 @@
-.fr{
+.fr {
     float: right;
 }
 
@@ -6,12 +6,20 @@
     cursor: pointer;
 }
 
-.nodata{
+.nodata {
     text-align: center;
     font-size: 20px;
     margin: 0;
 }
 
-.data-row-pad{
-    padding: 10px 15px
+.data-row-pad {
+    padding: 10px 15px;
+}
+
+.form-group {
+    padding: 5px 10px;
+}
+
+.padd-top{
+    padding-top: 15px;
 }

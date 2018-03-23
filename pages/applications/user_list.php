@@ -1,7 +1,7 @@
 <?php
 include '../includex/session.php';
 include '../includex/phpmessages.php';
-include "includephp/fetchusers.php";
+include "includephp/fetchuserslist.php";
 include "includephp/appinfo.php";
 ?>
 <!DOCTYPE html>
@@ -58,10 +58,10 @@ include "includephp/appinfo.php";
                                 <a href="../applications/">
                                     <i class="fa  fa-home  fa-fw"></i> Home</a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a href="user_list">
                                     <i class="fa fa-users fa-fw"></i> User lists</a>
-                            </li> -->
+                            </li>
                             <li>
                                 <a href="blog_list">
                                     <i class="fa fa-wordpress  fa-fw"></i> Blog lists</a>
@@ -101,6 +101,7 @@ include "includephp/appinfo.php";
                                         <th>Gender</th>
                                         <th>Email</th>
                                         <th>Address</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -113,6 +114,7 @@ include "includephp/appinfo.php";
                                         <td class="center"><?php echo $row['gender']; ?></td>
                                         <td class="center"><?php echo $row['email']; ?></td>
                                         <td class="center"><?php echo $row['address']; ?></td>
+                                        <td class="center"><a onclick="jumpedituserpage(<?php echo $row['postid']; ?> ?>')"><i class="fa fa-times fa-fw"></i></a></td>
                                     </tr>
                                     <?php
                                      }

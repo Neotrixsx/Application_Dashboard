@@ -58,10 +58,10 @@ include "includephp/appinfo.php";
                                 <a href="../applications/">
                                     <i class="fa  fa-home  fa-fw"></i> Home</a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a href="user_list">
                                     <i class="fa fa-users fa-fw"></i> User lists</a>
-                            </li> -->
+                            </li>
                             <li>
                                 <a href="blog_list">
                                     <i class="fa fa-wordpress  fa-fw"></i> Blog lists</a>

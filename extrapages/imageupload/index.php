@@ -23,15 +23,16 @@
 				$.ajax({
 					url: "upload",
 					type: "POST",
-					data:  new FormData(this),{test:'tesst'},
+					data:  new FormData(this),
 					contentType: false,
 					cache: false,
 					processData:false,
 					success: function(data){
 					$("#targetLayer").html(data);
+					alert(data);
 					},
 					error: function(){
-					} 	        
+					}
 				});
 			}));
 		});

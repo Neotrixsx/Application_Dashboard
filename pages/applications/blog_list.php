@@ -1,7 +1,7 @@
 <?php
 include '../includex/session.php';
 include '../includex/phpmessages.php';
-include "includephp/fetchusers.php";
+include "includephp/fetchblog.php";
 include "includephp/appinfo.php";
 ?>
 <!DOCTYPE html>
@@ -58,10 +58,10 @@ include "includephp/appinfo.php";
                                 <a href="../applications/">
                                     <i class="fa  fa-home  fa-fw"></i> Home</a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a href="user_list">
                                     <i class="fa fa-users fa-fw"></i> User lists</a>
-                            </li> -->
+                            </li>
                             <li>
                                 <a href="blog_list">
                                     <i class="fa fa-wordpress  fa-fw"></i> Blog lists</a>
@@ -97,22 +97,32 @@ include "includephp/appinfo.php";
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Gender</th>
-                                        <th>Email</th>
-                                        <th>Address</th>
+                                        <th>Web Title</th>
+                                        <th>Title</th>
+                                        <th>Detail</th>
+                                        <th>image</th>
+                                        <th>time</th>
+                                        <th>link</th>
+                                        <th>Pub Name</th>
+                                        <th>Pub Logo</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                     while ($row = mysqli_fetch_array($userinfo, MYSQLI_ASSOC)) {
+                                     while ($row = mysqli_fetch_array($bloginfo, MYSQLI_ASSOC)) {
                                     ?>
                                     <tr class="gradeX">
-                                        <td class="center"><?php echo $row['userid']; ?></td>
-                                        <td class="center"><?php echo $row['fname']; ?> <?php echo $row['lname']; ?></td>
-                                        <td class="center"><?php echo $row['gender']; ?></td>
-                                        <td class="center"><?php echo $row['email']; ?></td>
-                                        <td class="center"><?php echo $row['address']; ?></td>
+                                        <td class="center"><?php echo $row['postid']; ?></td>
+                                        <td class="center"><?php echo $row['browsertitle']; ?></td>
+                                        <td class="center"><?php echo $row['title']; ?></td>
+                                        <td class="center"><?php echo $row['detail']; ?></td>
+                                        <td class="center"><a href="<?php echo $row['image']; ?>"  target="_blank"  ><?php echo $row['image']; ?></a></td>
+                                        <td class="center"><?php echo $row['time']; ?></td>
+                                        <td class="center"><a href="<?php echo $row['link']; ?>"  target="_blank"  ><?php echo $row['link']; ?></a></td>
+                                        <td class="center"><?php echo $row['pubname']; ?></td>
+                                        <td class="center"><a href="<?php echo $row['publogo']; ?>"  target="_blank"  ><?php echo $row['publogo']; ?></a></td>
+                                        <td class="center"><a onclick="jumpeditblogpage(<?php echo $row['postid']; ?> ?>')"><i class="fa fa-times fa-fw"></i></a></td>
                                     </tr>
                                     <?php
                                      }

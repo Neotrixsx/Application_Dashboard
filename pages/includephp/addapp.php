@@ -67,7 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 `phone` varchar(50) NOT NULL,
                 `address` varchar(500) NOT NULL,
                 `notid` varchar(250) NOT NULL,
-                `notid_status` tinyint(1) NOT NULL
+                `notid_status` tinyint(1) NOT NULL,
+                `status` tinyint(1) NOT NULL
                 ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
 
             $app_users_unqkey_sql = "ALTER TABLE `$app_users`
