@@ -1,6 +1,6 @@
 <?php
 include '../includex/session.php';
-// include '../includex/phpmessages.php';
+include '../includex/phpmessages.php';
 include "includephp/fetchappinfo.php";
 ?>
     <!DOCTYPE html>
