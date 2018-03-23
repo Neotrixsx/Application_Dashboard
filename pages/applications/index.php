@@ -2,6 +2,8 @@
 include '../includex/session.php';
 include '../includex/phpmessages.php';
 include "includephp/fetchappinfo.php";
+include "includephp/appinfo.php";
+include "includephp/fetchcounts.php";
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -62,7 +64,7 @@ include "includephp/fetchappinfo.php";
                             </li>
                             <li>
                                 <a href="user_list">
-                                    <i class="fa fa-arrow-left fa-fw"></i> User lists</a>
+                                    <i class="fa fa-users fa-fw"></i> User lists</a>
                             </li>
                             <li>
                                 <a href="blog_list">
@@ -70,9 +72,8 @@ include "includephp/fetchappinfo.php";
                             </li>
                             <li>
                                 <a href="blog_new">
-                                    <i class="fa fa-book  fa-fw"></i> New Blog</a>
+                                    <i class="fa fa-th-list  fa-fw"></i> New Blog</a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
@@ -82,7 +83,68 @@ include "includephp/fetchappinfo.php";
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                <?php echo $appname ?>
+                                <?php echo $app_name ?> Application
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-users fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge"><?php echo $countuserresult ?></div>
+                                            <div>Users</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="user_list">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right">
+                                            <i class="fa fa-arrow-circle-right"></i>
+                                        </span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-wordpress fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge"><?php echo $countblogresult ?></div>
+                                            <div>Blogs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="blog_list">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right">
+                                            <i class="fa fa-arrow-circle-right"></i>
+                                        </span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                             Details
+                                <span class="fr">
+                                    <a href="app_edit" type="button" class="btn btn-outline btn-success">
+                                        <i class="fa fa-edit  fa-fw"></i> Edit</a>
+                                </span>
                             </h1>
                         </div>
                     </div>
@@ -250,42 +312,42 @@ include "includephp/fetchappinfo.php";
                                         <div class="panel-heading">
                                             <?php echo $appname ?> support and privacy:-
                                         </div>
-                                                                                   <!-- data grid -->
-                                            <div class="panel-body row data-row-pad">
-                                                <div class="col-lg-6">
-                                                    <strong>Website: </strong>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <?php echo $website ?>
-                                                </div>
+                                        <!-- data grid -->
+                                        <div class="panel-body row data-row-pad">
+                                            <div class="col-lg-6">
+                                                <strong>Website: </strong>
                                             </div>
-                                            <div class="panel-body row data-row-pad">
-                                                <div class="col-lg-6">
-                                                    <strong>Support Email: </strong>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <?php echo $supportemail ?>
-                                                </div>
+                                            <div class="col-lg-6">
+                                                <?php echo $website ?>
                                             </div>
-                                            <div class="panel-body row data-row-pad">
-                                                <div class="col-lg-6">
-                                                    <strong>Support Phone: </strong>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <?php echo $supportphone ?>
-                                                </div>
-                                            </div>
-                                            <div class="panel-body row data-row-pad">
-                                                <div class="col-lg-6">
-                                                    <strong>Privacy Policy: </strong>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <?php echo $privacypolicy ?>
-                                                </div>
-                                            </div>
-                                            <!-- /.table-responsive -->
                                         </div>
-                                                                   <!-- /.panel -->
+                                        <div class="panel-body row data-row-pad">
+                                            <div class="col-lg-6">
+                                                <strong>Support Email: </strong>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <?php echo $supportemail ?>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body row data-row-pad">
+                                            <div class="col-lg-6">
+                                                <strong>Support Phone: </strong>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <?php echo $supportphone ?>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body row data-row-pad">
+                                            <div class="col-lg-6">
+                                                <strong>Privacy Policy: </strong>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <?php echo $privacypolicy ?>
+                                            </div>
+                                        </div>
+                                        <!-- /.table-responsive -->
+                                    </div>
+                                    <!-- /.panel -->
                                 </div>
                                 <!-- /.col-lg-12 -->
                             </div>
