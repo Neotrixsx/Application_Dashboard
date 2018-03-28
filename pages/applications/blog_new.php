@@ -189,7 +189,7 @@ include "includephp/appinfo.php";
                                             </div>
                                             <div class="form-group">
                                                 <label>Post Image</label>
-                                                <div class="row padd-top">
+                                                <div class="row pt-fifteen">
                                                     <div class="col-lg-2">
                                                         <div id="targetLayer">No Image</div>
                                                     </div>
