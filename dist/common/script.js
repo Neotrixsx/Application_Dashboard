@@ -79,3 +79,47 @@ function delinfo(paraminfo, dataname) {
         window.location = "?param=" + paraminfo;
     }
 }
+
+
+
+$("#postimageForm").on('submit', (function (e) {
+    e.preventDefault();
+    $.ajax({
+        url: "uploadimg",
+        type: "POST",
+        data: new FormData(this),
+        contentType: false,
+        cache: false,
+        processData: false,
+        dataType:'JSON',
+        success: function(response){
+            console.log(response.url);
+            console.log(response.fullurl);
+            console.log(response.message);
+            $("#imageurl").val(response.fullurl);
+            $("#targetLayer").html('<img class="image-preview" src="'+response.url+'" class="upload-preview" />');
+        },
+        error: function () {}
+    });
+}));
+
+$("#publogoForm").on('submit', (function (e) {
+    e.preventDefault();
+    $.ajax({
+        url: "uploadimg",
+        type: "POST",
+        data: new FormData(this),
+        contentType: false,
+        cache: false,
+        processData: false,
+        dataType:'JSON',
+        success: function(response){
+            console.log(response.url);
+            console.log(response.fullurl);
+            console.log(response.message);
+            $("#publogo").val(response.fullurl);
+            $("#targetlogoLayer").html('<img class="image-preview" src="'+response.url+'" class="upload-preview" />');
+        },
+        error: function () {}
+    });
+}));

@@ -1,7 +1,6 @@
 <?php
 include '../includex/session.php';
 include '../includex/phpmessages.php';
-include "includephp/fetchusers.php";
 include "includephp/appinfo.php";
 ?>
     <!DOCTYPE html>
@@ -85,6 +84,72 @@ include "includephp/appinfo.php";
                             <h1 class="page-header">New Blog</h1>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            Post Image information:-
+                                        </div>
+                                        <form id="postimageForm" action="upload" method="post">
+                                            <div class="form-group">
+                                               <label>Post Image name</label>
+                                               <input class="form-control" name="imagename" value="postimage" readonly>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Post Image</label>
+                                                <div class="row pt-fifteen">
+                                                    <div class="col-lg-2">
+                                                        <div id="targetLayer">No Image</div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <input name="mainimage" type="file" class="inputFile form-control" />
+                                                        <br/>
+                                                        <input type="submit" value="Submit" class="btn btn-default" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            Publisher logo:-
+                                        </div>
+                                        <form id="publogoForm" action="upload" method="post">
+                                            <div class="form-group">
+                                                <label>Publisher logo id</label>
+                                                <input class="form-control" name="imagename" value="publogo" readonly>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Publisher logo</label>
+                                                <div class="row pt-fifteen">
+                                                    <div class="col-lg-2">
+                                                        <div id="targetlogoLayer">No Image</div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <input name="mainimage" type="file" class="inputFile form-control" />
+                                                        <br/>
+                                                        <input type="submit" value="Submit" class="btn btn-default" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
                     <form role="form" method="post">
                         <!-- block -->
                         <div class="row">
@@ -100,7 +165,7 @@ include "includephp/appinfo.php";
                                             <!-- data grid -->
                                             <div class="form-group">
                                                 <label>Application ID</label>
-                                                <input class="form-control" value="<?php echo $app_id; ?>" disabled>
+                                                <input class="form-control" name="appid" value="<?php echo $app_id; ?>" disabled>
                                             </div>
                                             <div class="form-group">
                                                 <label>Application Name</label>
@@ -108,15 +173,15 @@ include "includephp/appinfo.php";
                                             </div>
                                             <div class="form-group">
                                                 <label>Title</label>
-                                                <input type="text" name="title" class="form-control" placeholder="Enter username">
+                                                <input type="text" name="title" class="form-control" maxlength="500" placeholder="Enter username">
                                             </div>
                                             <div class="form-group">
                                                 <label>Web Title</label>
-                                                <input type="text" name="webtitle" class="form-control" placeholder="Enter username">
+                                                <input type="text" name="webtitle" class="form-control" maxlength="100" placeholder="Enter username">
                                             </div>
                                             <div class="form-group">
                                                 <label>Detail</label>
-                                                <textarea class="form-control" name="detail" rows="3" placeholder="Enter Addressr"></textarea>
+                                                <textarea class="form-control" name="detail" rows="3" maxlength="5000" placeholder="Enter Addressr"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label>Date/Time</label>
@@ -129,11 +194,11 @@ include "includephp/appinfo.php";
                                             </div>
                                             <div class="form-group">
                                                 <label>Image url</label>
-                                                <input class="form-control" type="text" name="imageurl" readonly>
+                                                <input class="form-control" type="text" maxlength="250" name="imageurl" id="imageurl" readonly>
                                             </div>
                                             <div class="form-group">
                                                 <label>Original link</label>
-                                                <input type="text" name="webtitle" class="form-control" placeholder="Enter username">
+                                                <input type="text" name="weburl" maxlength="300"  class="form-control" placeholder="Enter username">
                                             </div>
                                             <!-- data grid  end-->
                                             <!-- /.panel-body -->
@@ -156,11 +221,11 @@ include "includephp/appinfo.php";
                                             </div>
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <input class="form-control" value="<?php echo $app_id; ?>">
+                                                <input class="form-control" name="pubname">
                                             </div>
                                             <div class="form-group">
                                                 <label>Logo url</label>
-                                                <input class="form-control" name="publogo" id="publogo" readonly>
+                                                <input class="form-control" name="publogo" maxlength="250" id="publogo" readonly>
                                             </div>
                                         </div>
                                         <!-- /.panel -->
@@ -172,40 +237,7 @@ include "includephp/appinfo.php";
                         <button type="submit" class="btn btn-default">Submit </button>
                         <button type="reset" class="btn btn-default">Reset </button>
                     </form>
-                    <hr />
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            Post Image information:-
-                                        </div>
-                                        <form id="postimageForm" action="upload" method="post">
-                                            <div class="form-group">
-                                                <label>Post Image name</label>
-                                                <!-- <input class="form-control" value="<?php echo $app_id; ?>" readonly> -->
-                                                <input class="form-control" name="imagename" value="postimage" readonly>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Post Image</label>
-                                                <div class="row pt-fifteen">
-                                                    <div class="col-lg-2">
-                                                        <div id="targetLayer">No Image</div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <input name="mainimage" type="file" class="inputFile form-control" />
-                                                        <br/>
-                                                        <input type="submit" value="Submit" class="btn btn-default" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   <hr/>
                 </div>
             </div>
         </div>
@@ -238,45 +270,45 @@ include "includephp/appinfo.php";
         <script>
             $(function () {
                 $('#datetimepicker').datetimepicker();
-                $("#postimageForm").on('submit', (function (e) {
-                    e.preventDefault();
-                    $.ajax({
-                        url: "uploadimg",
-                        type: "POST",
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        dataType:'JSON', 
-                        success: function(response){
-                            console.log(response.blablabla);    
-                             $("#targetLayer").html('<img class="image-preview" src="data.path" class="upload-preview" />'); .
-                        },
-                        error: function () {}
-                    });
-                }));
             });
-        </script>
-        <style>
-            #targetLayer {
-                width: 150px;
-                height: 150px;
-                text-align: center;
-                line-height: 150px;
-                font-weight: bold;
-                color: #C0C0C0;
-                background-color: #F0E8E0;
-                border-bottom-left-radius: 4px;
-                border-top-left-radius: 4px;
-            }
 
-            .image-preview {
-                width: 150px;
-                height: 150px;
-                border-bottom-left-radius: 4px;
-                border-top-left-radius: 4px;
-            }
-        </style>
+            $("#postimageForm").on('submit', (function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "uploadimg",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    dataType:'JSON',
+                    success: function(response){
+                        $("#imageurl").val(response.fullurl);
+                        $("#targetLayer").html('<img class="image-preview" src="'+response.url+'" class="upload-preview" />');
+                    },
+                    error: function () {}
+                });
+            }));
+
+            $("#publogoForm").on('submit', (function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "uploadimg",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    dataType:'JSON',
+                    success: function(response){
+                        $("#publogo").val(response.fullurl);
+                        $("#targetlogoLayer").html('<img class="image-preview" src="'+response.url+'" class="upload-preview" />');
+                    },
+                    error: function () {}
+                });
+            }));
+        </script>
+
     </body>
 
     </html>

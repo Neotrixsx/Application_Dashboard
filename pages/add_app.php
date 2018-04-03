@@ -65,25 +65,25 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Application information
+                        <div class="panel-heading red-text makebold">
+                           Note: All field are required!!! 
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <form role="form" method="post">
                                         <div class="form-group">
-                                            <label>Name</label>
-                                            <input class="form-control"  type="text" id="appname" name="appname" placeholder="Enter Name">
+                                            <label>Name <span class="red-text makebold sixteen-text">*</span></label>
+                                            <input class="form-control"  type="text" id="appname" name="appname" placeholder="Enter Name" required>
                                         </div>
                                         <div class="form-group">
-                                            <label>ID</label>
-                                            <input id="appid" name="appid" class="form-control"  type="text" readonly  >
+                                            <label>ID <span class="red-text makebold sixteen-text">*</span></label>
+                                            <input id="appid" name="appid" class="form-control"  type="text" readonly required >
                                             <p class="help-block">Application ID based on above name</p>
                                             <p class="help-block">Note: Non-editable and not able to change in future.</p>
                                         </div>
                                         <div class="form-group">
-                                            <label>Application Type</label>
+                                            <label>Application Type <span class="red-text makebold sixteen-text">*</span></label>
                                             <select class="form-control" name="apptype" >
                                             <?php  
                                                 while ( $row = mysqli_fetch_array($apptype, MYSQLI_ASSOC)){
@@ -95,7 +95,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Application Category</label>
+                                            <label>Application Category <span class="red-text makebold sixteen-text">*</span></label>
                                             <select class="form-control" name="appcat" >
                                             <?php  
                                                 while ( $row = mysqli_fetch_array($appcat, MYSQLI_ASSOC)){
@@ -107,20 +107,23 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea name="appdes" class="form-control" placeholder="Enter Description"  rows="3"></textarea>
+                                            <label>Description <span class="red-text makebold sixteen-text">*</span></label>
+                                            <textarea name="appdes" class="form-control" placeholder="Enter Description" required rows="3"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label>Website</label>
-                                            <input class="form-control"  type="url" id="appweb" name="appweb" placeholder="Enter URL">
+                                            <label>Website <span class="red-text makebold sixteen-text">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="basic-addon1">https://</span>
+                                                <input type="text" class="form-control"  type="url" id="appweb" name="appweb" placeholder="Enter URL" aria-describedby="basic-addon1" required>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Email(Support)</label>
-                                            <input class="form-control"  type="email" id="appemail" name="appemail" placeholder="Enter Email">
+                                            <label>Email(Support) <span class="red-text makebold sixteen-text">*</span></label>
+                                            <input class="form-control"  type="email" id="appemail" name="appemail" placeholder="Enter Email" required>
                                         </div>
                                         
-                                        <button type="submit" class="btn btn-default">Submit Button</button>
-                                        <button type="reset" class="btn btn-default">Reset Button</button>
+                                        <button type="submit" class="btn btn-default">Submit </button>
+                                        <button type="reset" class="btn btn-default">Reset </button>
                                     </form>
                                 </div>
                                 

@@ -29,22 +29,18 @@ if (is_array($_FILES)) {
                     $targetPath = "dXBsb2Fk/" . $new_file_name;
                     if (move_uploaded_file($sourcePath, $targetPath)) {
 						$finalpath = $imagefullpath . $targetPath;
-                        // echo $targetPath;
-						// echo json_encode(array("fullpath"=>$finalpath));
-						echo json_encode(array("blablabla"=>"helloi"));
-                       
-					}
+                        echo json_encode(array("url"=>"$targetPath","fullurl"=>$finalpath,"message"=>"Successfully added"));
+                  	}
                 }
             } else {
-                echo "<script type='text/javascript'> alert('Upload failed with error code,'); </script>";
-                echo "Upload failed with error code " . $_FILES['mainimage']['error'];
+                echo json_encode(array("message"=>"Upload failed with error code " . $_FILES['mainimage']['error']));
             }
 
         } else {
-            echo "<script type='text/javascript'> alert('Larger than 1MB'); </script>";
+            echo json_encode(array("message"=>"'Larger than 1MB'"));
         }
     } else {
-        echo "<script type='text/javascript'> alert('Only Image files'); </script>";
+        echo json_encode(array("message"=>"Only Image files"));
     }
 }
 ?>

@@ -89,7 +89,7 @@ include "includephp/appinfo.php";
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        <?php echo $appname ?> users list:-
+                        <?php echo $app_name ?> users list:-
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
