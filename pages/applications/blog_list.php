@@ -113,19 +113,16 @@ include "includephp/appinfo.php";
                                      while ($row = mysqli_fetch_array($bloginfo, MYSQLI_ASSOC)) {
                                     ?>
                                     <tr class="gradeX">
-                                        <td class="center"><?php echo $row['postid']; ?></td>
-                                        <td class="center"><?php echo $row['browsertitle']; ?></td>
-                                        <td class="center"><?php echo $row['title']; ?></td>
-                                        <td class="center"><?php echo $row['detail']; ?></td>
-                                        <td class="center"><a href="<?php echo $row['image']; ?>"  target="_blank"  ><?php echo $row['image']; ?></a></td>
-                                        <td class="center"><?php echo $row['time']; ?></td>
-                                        <td class="center"><a href="<?php echo $row['link']; ?>"  target="_blank"  ><?php echo $row['link']; ?></a></td>
-                                        <td class="center"><?php echo $row['pubname']; ?></td>
-                                        <td class="center"><a href="<?php echo $row['publogo']; ?>"  target="_blank"  ><?php echo $row['publogo']; ?></a></td>
-                                        <td class="center"><a onclick="jumpeditblogpage(<?php echo $row['postid']; ?> ?>')"><i class="fa fa-times fa-fw"></i></a></td>
-
-
-                                        <!-- `postid`,`browsertitle`,`title`,`detail`,`image`,`time`,`link`,`pubname`,`publogo`,`status` -->
+                                        <td class="caline"><?php echo $row['postid']; ?></td>
+                                        <td class="caline"><?php echo $row['browsertitle']; ?></td>
+                                        <td class="caline"><?php echo $row['title']; ?></td>
+                                        <td class="caline"><?php echo $row['detail']; ?></td>
+                                        <td class="caline"><a href="<?php echo $row['image']; ?>"  target="_blank"  ><?php echo $row['image']; ?></a></td>
+                                        <td class="caline"><?php echo $row['time']; ?></td>
+                                        <td class="caline"><a href="<?php echo $row['link']; ?>"  target="_blank"  ><?php echo $row['link']; ?></a></td>
+                                        <td class="caline"><?php echo $row['pubname']; ?></td>
+                                        <td class="caline"><a href="<?php echo $row['publogo']; ?>"  target="_blank"  ><?php echo $row['publogo']; ?></a></td>
+                                        <td class="caline"><a onclick="jumpeditblogpage('<?php echo $row['postid']; ?>')"><i class="fa  fa-edit fa-fw"></i></a></td>
                                     </tr>
                                     <?php
                                      }

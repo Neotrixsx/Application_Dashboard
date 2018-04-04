@@ -1,6 +1,6 @@
 <?php
     $appid =  $_SESSION['Appid'];
-    $userid =  $_SESSION['edituserid'];
+    $userid =  $_SESSION['editUserid'];
     
     $tablename= $appid."_users";
 

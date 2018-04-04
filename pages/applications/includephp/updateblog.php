@@ -18,18 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cunotstatus = mysqli_real_escape_string($db, $_POST['unotstatus']);
     $cuuserstatus = mysqli_real_escape_string($db, $_POST['uuserstatus']);
   
-    $update = "UPDATE `$tablename` SET 
-    `phone_unique_id` = '$cudeviceid', 
-    `fname` = '$cufname', 
-    `lname` = '$culname', 
-    `gender` = '$cugender', 
-    `email` = '$cuemail', 
-    `phone` = '$cuphone', 
-    `address` = '$cuaddress', 
-    `notid` = '$cunotid', 
-    `notid_status` = '$cunotstatus', 
-    `status` = '$cuuserstatus' 
-    WHERE `$tablename`.`userid` = $edituserid";
+    $update = "UPDATE `test_blog` SET 
+    `browsertitle` = 'qwqwq9', 
+    `title` = 'qwqw9', 
+    `detail` = 'wqwq9', 
+    `image` = 'D:/xampp/htdocs/Application_Dashboard/pages/applications/dXBsb2Fk/postimage20180404.jpg9', 
+    `time` = '9', 
+    `link` = 'https://www.google.co.in/?gfe_rd=cr&dcr=0&ei=lW7E9WrfvKouN8QfijbWYAg', 
+    `pubname` = 'asass9', `publogo` = 'D:/xampp/htdocs/A9pplication_Dashboard/pages/applications/dXBsb2Fk/publogo20180404.png', 
+    `status` = '0' 
+    WHERE `test_blog`.`postid` = 1;";
 
     if ($db->query($update) === TRUE) {
         echo "<script type='text/javascript'> successupdatetoast(); </script>";

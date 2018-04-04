@@ -43,12 +43,12 @@ function jumpedituserpage(edituserid) {
     //ajax call 
     $.ajax({
         type: 'GET',
-        url: "../pages/includex/sess",
+        url: "../includex/sess",
         data: {
             edituserid: edituserid
         },
         success: function (data) {
-            window.location.href = 'applications/';
+            window.location.href = 'user_edit';
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert("Error Occured on create edituserid session");
@@ -56,16 +56,16 @@ function jumpedituserpage(edituserid) {
     });
 }
 
-function jumpeditblogpage(editblogid) {
+function jumpeditblogpage(editblogid) {    
     //ajax call 
     $.ajax({
         type: 'GET',
-        url: "../pages/includex/sess",
+        url: "../includex/sess",
         data: {
             editblogid: editblogid
         },
         success: function (data) {
-            window.location.href = 'applications/';
+            window.location.href = 'blog_edit';
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert("Error Occured on create edituserid session");

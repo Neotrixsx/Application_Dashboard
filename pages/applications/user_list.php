@@ -109,12 +109,12 @@ include "includephp/appinfo.php";
                                      while ($row = mysqli_fetch_array($userinfo, MYSQLI_ASSOC)) {
                                     ?>
                                     <tr class="gradeX">
-                                        <td class="center"><?php echo $row['userid']; ?></td>
-                                        <td class="center"><?php echo $row['fname']; ?> <?php echo $row['lname']; ?></td>
-                                        <td class="center"><?php echo $row['gender']; ?></td>
-                                        <td class="center"><?php echo $row['email']; ?></td>
-                                        <td class="center"><?php echo $row['address']; ?></td>
-                                        <td class="center"><a onclick="jumpedituserpage(<?php echo $row['postid']; ?> ?>')"><i class="fa fa-times fa-fw"></i></a></td>
+                                        <td class="caline"><?php echo $row['userid']; ?></td>
+                                        <td class="caline"><?php echo $row['fname']; ?> <?php echo $row['lname']; ?></td>
+                                        <td class="caline"><?php echo $row['gender']; ?></td>
+                                        <td class="caline"><?php echo $row['email']; ?></td>
+                                        <td class="caline"><?php echo $row['address']; ?></td>
+                                        <td class="caline"><a onclick="jumpedituserpage('<?php echo $row['userid']; ?>')"><i class="fa  fa-edit fa-fw"></i></a></td>
                                     </tr>
                                     <?php
                                      }
