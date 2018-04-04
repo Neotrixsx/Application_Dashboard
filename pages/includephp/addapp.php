@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 `title` varchar(500) NOT NULL,
                 `detail` varchar(5000) NOT NULL,
                 `image` varchar(250) NOT NULL,
-                `time` datetime NOT NULL,
+                `time` varchar(20) NOT NULL,
                 `link` varchar(300) NOT NULL,
                 `pubname` varchar(100) NOT NULL,
                 `publogo` varchar(250) DEFAULT NULL,

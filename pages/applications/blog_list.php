@@ -1,7 +1,7 @@
 <?php
 include '../includex/session.php';
 include '../includex/phpmessages.php';
-include "includephp/fetchblog.php";
+include "includephp/fetchbloglist.php";
 include "includephp/appinfo.php";
 ?>
 <!DOCTYPE html>
@@ -123,6 +123,9 @@ include "includephp/appinfo.php";
                                         <td class="center"><?php echo $row['pubname']; ?></td>
                                         <td class="center"><a href="<?php echo $row['publogo']; ?>"  target="_blank"  ><?php echo $row['publogo']; ?></a></td>
                                         <td class="center"><a onclick="jumpeditblogpage(<?php echo $row['postid']; ?> ?>')"><i class="fa fa-times fa-fw"></i></a></td>
+
+
+                                        <!-- `postid`,`browsertitle`,`title`,`detail`,`image`,`time`,`link`,`pubname`,`publogo`,`status` -->
                                     </tr>
                                     <?php
                                      }

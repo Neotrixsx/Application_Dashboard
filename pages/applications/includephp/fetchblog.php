@@ -4,7 +4,7 @@
 
     $sql = "SELECT `postid`,`title`,`time`,`pubname`,`link` FROM `$tablename` ";
     $result = mysqli_query($db, $sql);
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    // $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
     if ($count >= 1) {
         $bloginfo = $result;

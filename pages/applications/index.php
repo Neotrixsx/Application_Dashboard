@@ -1,6 +1,6 @@
 <?php
 include '../includex/session.php';
-include '../includex/phpmessages.php';
+// include '../includex/phpmessages.php';
 include "includephp/fetchappinfo.php";
 include "includephp/appinfo.php";
 include "includephp/fetchcounts.php";
@@ -156,7 +156,7 @@ include "includephp/fetchcounts.php";
                                 <div class="col-lg-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <?php echo $appname ?> basic information:-
+                                            <?php echo $app_name?> basic information:-
                                         </div>
                                         <!-- /.panel-heading -->
                                         <!-- data grid -->
@@ -202,7 +202,7 @@ include "includephp/fetchcounts.php";
                                 <div class="col-lg-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <?php echo $appname ?> Phone ScreenShots:-
+                                            <?php echo $app_name?> Phone ScreenShots:-
                                         </div>
                                         <!-- /.panel-heading -->
                                         <div class="panel-body">
@@ -226,7 +226,7 @@ include "includephp/fetchcounts.php";
                                 <div class="col-lg-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <?php echo $appname ?> Tab ScreenShots:-
+                                            <?php echo $app_name?> Tab ScreenShots:-
                                         </div>
                                         <!-- /.panel-heading -->
                                         <div class="panel-body">
@@ -250,7 +250,7 @@ include "includephp/fetchcounts.php";
                                 <div class="col-lg-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <?php echo $appname ?> basic images:-
+                                            <?php echo $app_name?> basic images:-
                                         </div>
                                         <!-- /.panel-heading -->
                                         <div class="panel-body">
@@ -274,7 +274,7 @@ include "includephp/fetchcounts.php";
                                 <div class="col-lg-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <?php echo $appname ?> basic type and Category:-
+                                            <?php echo $app_name?> basic type and Category:-
                                         </div>
                                         <!-- /.panel-heading -->
                                         <div class="panel-body row data-row-pad">
@@ -310,7 +310,7 @@ include "includephp/fetchcounts.php";
                                 <div class="col-lg-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <?php echo $appname ?> support and privacy:-
+                                            <?php echo $app_name?> support and privacy:-
                                         </div>
                                         <!-- data grid -->
                                         <div class="panel-body row data-row-pad">

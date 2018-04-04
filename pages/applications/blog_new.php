@@ -193,12 +193,12 @@ include "includephp/appinfo.php";
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label>Image url</label>
-                                                <input class="form-control" type="text" maxlength="250" name="imageurl" id="imageurl" readonly>
-                                            </div>
-                                            <div class="form-group">
                                                 <label>Original link</label>
                                                 <input type="text" name="weburl" maxlength="300"  class="form-control" placeholder="Enter username">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Image url</label>
+                                                <input class="form-control" type="text" maxlength="250" name="imageurl" id="imageurl" readonly>
                                             </div>
                                             <!-- data grid  end-->
                                             <!-- /.panel-body -->
@@ -312,3 +312,6 @@ include "includephp/appinfo.php";
     </body>
 
     </html>
+    <?php
+        include "includephp/newblog.php"
+    ?>

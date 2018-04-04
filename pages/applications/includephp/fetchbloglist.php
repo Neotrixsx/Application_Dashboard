@@ -2,9 +2,9 @@
     $appid =  $_SESSION['Appid'];
     $tablename= $appid."_blog";
 
-    $sql = "SELECT `postid`,`browsertitle`,`title`,`detail`,`image`,`time`,`link`,`pubname`,`publogo` FROM `$tablename` ORDER BY userid DESC;";
+    $sql = "SELECT `postid`,`browsertitle`,`title`,`detail`,`image`,`time`,`link`,`pubname`,`publogo`,`status` FROM `$tablename`";
     $result = mysqli_query($db, $sql);
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    // $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
     if ($count >= 1) {
         $bloginfo = $result;

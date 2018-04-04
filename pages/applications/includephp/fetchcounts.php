@@ -1,24 +1,26 @@
 <?php
-$saveappid =  $_SESSION['Appid'];
+$saveappid = $_SESSION['Appid'];
 $tablenameusers = $saveappid . "_users";
 $tablenameblog = $saveappid . "_blog";
 
-$usercountsql = "SELECT COUNT(userid) FROM $tablenameusers;";
-$blogcountsql = "SELECT COUNT(postid) FROM $tablenameblog;";
+$usercountsql = mysqli_query($db, "SELECT COUNT(userid) FROM $tablenameusers");
+$blogcountsql = mysqli_query($db, "SELECT COUNT(postid) FROM $tablenameblog");
 
-$usercount = mysql_fetch_array(mysqli_query($db, $usercountsql));
-$blogcount = mysql_fetch_array(mysqli_query($db, $blogcountsql));
+while ($usercount = $usercountsql->fetch_assoc()) {
+    $ucount = $usercount['COUNT(userid)'];
+}
+while ($blogcount = $blogcountsql->fetch_assoc()) {
+    $bcount = $blogcount['COUNT(postid)'];
+}
 
-
-if ($usercount >= 1) {
-    $countuserresult=$usercount;
+if ($ucount >= 1) {
+    $countuserresult = $ucount;
 } else {
     $countuserresult = "0";
 }
 
-if ($blogcount >= 1) {
-    $countblogresult=$blogcount;
+if ($bcount >= 1) {
+    $countblogresult = $bcount;
 } else {
     $countblogresult = "0";
 }
-?>
