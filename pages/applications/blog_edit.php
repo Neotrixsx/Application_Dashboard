@@ -151,9 +151,7 @@ include "includephp/appinfo.php";
                                         </div>
                                         <div class="col-lg-9">
                                             <input type="text" name="pimageurl" value="<?php echo $imageurl; ?>" class="form-control" required placeholder="Enter imageurl">
-                                            <div id="targetLayer">
-                                                <img class="image-preview" src="'<?php echo $imageurl; ?>'" class="upload-preview"/>
-                                            </div>
+                                            <img class="image-preview pt-five" src="'<?php echo $imageurl; ?>'" class="upload-preview"/>
                                         </div>
                                     </div>
                                     <div class="panel-body row data-row-pad">
@@ -170,7 +168,8 @@ include "includephp/appinfo.php";
                                         </div>
                                         <div class="col-lg-9">
                                             <input type="text" name="ppublogourl" value="<?php echo $publogourl; ?>" class=" form-control " required placeholder="Enter Logo url ">
-                                        <div id="targetLayer "><img class="image-preview " src="'<?php echo $publogourl; ?>' " class="upload-preview"/></div>
+                                            <img class="image-preview pt-five" src="'<?php echo $publogourl; ?>' " class="upload-preview"/>
+                                        
                                         </div>
                                     </div>
                                     <div class="panel-body row data-row-pad ">
