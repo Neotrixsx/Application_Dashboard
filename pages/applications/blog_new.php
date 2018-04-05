@@ -265,6 +265,9 @@ include "includephp/appinfo.php";
         <script type="text/javascript" src="../../vendor/moment/moment.min.js"></script>
         <script type="text/javascript" src="../../vendor/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
         <link rel="stylesheet" href="../../vendor/datetimepicker/css/bootstrap-datetimepicker.min.css" />
+       
+        <script src="../../dist/tinymce/tinymce.min.js"></script>
+        <script>tinymce.init({ selector:'textarea' });</script>
 
 
         <script>

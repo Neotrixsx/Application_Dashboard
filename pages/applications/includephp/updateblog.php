@@ -1,33 +1,34 @@
 <?php
 
 $appid = $_SESSION['Appid'];
-$edituserid = $_SESSION['editUserid'];
+$editblogid = $_SESSION['editBlogid'];
 
-$tablename = $appid . "_users";
+$tablename = $appid . "_blog";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $cuid = mysqli_real_escape_string($db, $_POST['uid']);
-    $cufname = mysqli_real_escape_string($db, $_POST['ufname']);
-    $culname = mysqli_real_escape_string($db, $_POST['uname']);
-    $cudeviceid = mysqli_real_escape_string($db, $_POST['udeviceid']);
-    $cugender = mysqli_real_escape_string($db, $_POST['ugender']);
-    $cuemail = mysqli_real_escape_string($db, $_POST['uemail']);
-    $cuphone = mysqli_real_escape_string($db, $_POST['uphone']);
-    $cuaddress = mysqli_real_escape_string($db, $_POST['uaddress']);
-    $cunotid = mysqli_real_escape_string($db, $_POST['unotid']);
-    $cunotstatus = mysqli_real_escape_string($db, $_POST['unotstatus']);
-    $cuuserstatus = mysqli_real_escape_string($db, $_POST['uuserstatus']);
+    $bpid = mysqli_real_escape_string($db, $_POST['pid']);
+    $bptitle = mysqli_real_escape_string($db, $_POST['ptitle']);
+    $bpbrowsertitle = mysqli_real_escape_string($db, $_POST['pbrowsertitle']);
+    $bpdatetime = mysqli_real_escape_string($db, $_POST['pdatetime']);
+    $bpurllink = mysqli_real_escape_string($db, $_POST['purllink']);
+    $bpdetail = mysqli_real_escape_string($db, $_POST['pdetail']);
+    $bpimageurl = mysqli_real_escape_string($db, $_POST['pimageurl']);
+    $bppubname = mysqli_real_escape_string($db, $_POST['ppubname']);
+    $bppublogourl = mysqli_real_escape_string($db, $_POST['ppublogourl']);
+    $bpstatus = mysqli_real_escape_string($db, $_POST['pstatus']);
+    $b = mysqli_real_escape_string($db, $_POST['uuserstatus']);
   
-    $update = "UPDATE `test_blog` SET 
-    `browsertitle` = 'qwqwq9', 
-    `title` = 'qwqw9', 
-    `detail` = 'wqwq9', 
-    `image` = 'D:/xampp/htdocs/Application_Dashboard/pages/applications/dXBsb2Fk/postimage20180404.jpg9', 
-    `time` = '9', 
-    `link` = 'https://www.google.co.in/?gfe_rd=cr&dcr=0&ei=lW7E9WrfvKouN8QfijbWYAg', 
-    `pubname` = 'asass9', `publogo` = 'D:/xampp/htdocs/A9pplication_Dashboard/pages/applications/dXBsb2Fk/publogo20180404.png', 
-    `status` = '0' 
-    WHERE `test_blog`.`postid` = 1;";
+    $update = "UPDATE `$tablename` SET 
+    `browsertitle` = '$bpbrowsertitle', 
+    `title` = '$bptitle', 
+    `detail` = '$bpdetail', 
+    `image` = '$bpimageurl', 
+    `time` = '$bpdatetime', 
+    `link` = '$bpurllink', 
+    `pubname` = '$bppubname', 
+    `publogo` = '$bppublogourl', 
+    `status` = '$bpstatus' 
+    WHERE `$tablename`.`postid` = $editblogid;";
 
     if ($db->query($update) === TRUE) {
         echo "<script type='text/javascript'> successupdatetoast(); </script>";

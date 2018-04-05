@@ -83,7 +83,7 @@ include "includephp/appinfo.php";
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                <?php echo $app_name ?> Application users</h1>
+                                <?php echo $app_name ?> post information</h1>
                         </div>
                     </div>
                     <div class="row">
@@ -100,7 +100,7 @@ include "includephp/appinfo.php";
                                             <strong>Post ID(Readonly): </strong>
                                         </div>
                                         <div class="col-lg-9">
-                                            <input type="text" name="p id" value="<?php echo $id; ?>" class="form-control" readonly>
+                                            <input type="text" name="pid" value="<?php echo $id; ?>" class="form-control" readonly>
                                         </div>
                                     </div>
                                     <div class="panel-body row data-row-pad">
@@ -129,7 +129,7 @@ include "includephp/appinfo.php";
                                     </div>
                                     <div class="panel-body row data-row-pad">
                                         <div class="col-lg-3">
-                                            <strong>Browser title: </strong>
+                                            <strong>Original Link: </strong>
                                         </div>
                                         <div class="col-lg-9">
                                             <input type="text" name="purllink" value="<?php echo $urllink; ?>" class="form-control" placeholder="Enter Browser title">
@@ -169,7 +169,6 @@ include "includephp/appinfo.php";
                                         <div class="col-lg-9">
                                             <input type="text" name="ppublogourl" value="<?php echo $publogourl; ?>" class=" form-control " required placeholder="Enter Logo url ">
                                             <img class="image-preview pt-five" src="'<?php echo $publogourl; ?>' " class="upload-preview"/>
-                                        
                                         </div>
                                     </div>
                                     <div class="panel-body row data-row-pad ">
@@ -180,7 +179,6 @@ include "includephp/appinfo.php";
                                             <input type="text " name="pstatus " value="<?php echo $status; ?>" class="form-control" required placeholder="Enter 0 or 1">
                                         </div>
                                     </div>
-
                                     <!-- data grid  end-->
                                     <!-- /.panel-body -->
                                 </div>
@@ -213,6 +211,8 @@ include "includephp/appinfo.php";
         <!-- Custome js -->
         <script src="../../dist/common/script.js"></script>
         <script src="../../dist/common/datatable.js"></script>
+        <script src="../../dist/tinymce/tinymce.min.js"></script>
+        <script>tinymce.init({ selector:'textarea' });</script>
 
     </body>
 
